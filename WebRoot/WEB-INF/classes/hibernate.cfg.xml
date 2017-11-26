@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		
+		<!--  MySQL 数据库信息-->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        	<property name="connection.url">jdbc:mysql://localhost:3306/djptdb</property>
+        	<property name="connection.username">root</property>
+        	<property name="connection.password">root</property>
+        	<property name="connection.autocommit">false</property>
+        	
+        	<property name="hibernate.connection.provider_class">
+            org.hibernate.connection.C3P0ConnectionProvider
+	        </property>
+	        <property name="hibernate.c3p0.max_size">
+	            200
+	        </property>
+	        <property name="hibernate.c3p0.min_size">
+	            5
+	        </property>
+	        <property name="hibernate.c3p0.timeout">
+	            120
+	        </property>
+	        <property name="hibernate.c3p0.max_statements">
+	            100
+	        </property>
+	        <property name="hibernate.c3p0.idle_test_period">
+	            120
+	        </property>
+	        <property name="hibernate.c3p0.acquire_increment">
+	            2
+	        </property>
+	        
+        	<!-- 方言 -->
+        	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        	
+        	<!--显示sql语句-->
+		<property name="show_sql">true</property>
+		
+		<!-- Drop and re-create the database schema on startup  
+        	<property name="hbm2ddl.auto">create</property>
+        	-->
+		
+		<!--引入的映射对象的xml文件的全路径及文件名-->
+		<mapping resource="com/pxxy/djpt/bean/news.hbm.xml"/>
+		<mapping resource="com/pxxy/djpt/bean/student.hbm.xml"/>
+		<mapping resource="com/pxxy/djpt/bean/admin.hbm.xml"/>
+		<mapping resource="com/pxxy/djpt/bean/material.hbm.xml"/>
+		<mapping resource="com/pxxy/djpt/bean/honor.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
+
+
+

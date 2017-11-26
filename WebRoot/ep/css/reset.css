@@ -1,0 +1,188 @@
+/*
+    Reset CSS v3.0 - 07/2010
+    By Objetivo Creativo
+    http://www.objetivocreativo.com
+    DEFAULT
+
+    -
+
+    Reseteo de valores según las recomendaciones de la W3C
+	
+	Personalizado por webespacios.com
+*/
+
+a, abbr, acronym, address, area,
+b, base, big, blockquote, body,
+br, caption, cite, code, col,
+colgroup, dd, del, dfn, div,
+dl, dt, em, form, frame,
+frameset, h1, h2, h3, h4, h5,
+h6, body, hr, html, i, iframe,
+img, ins, kbd, label, li, link,
+map, object, ol, optgroup,
+option, p, pre, q, samp,
+small, span, strong, sub,
+sup, table, tbody, td, tfoot, th,
+thead, title, tr, tt, ul, var {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	background: transparent;
+	text-transform: none;
+	word-spacing: normal;
+	letter-spacing: normal;
+	direction: ltr;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+	unicode-bidi: normal;
+	position: static;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	left: auto;
+	clear: none;
+	display: inline;
+	visibility: visible;
+	white-space: normal;
+	z-index: auto;
+	cursor: auto;
+	vertical-align: baseline;
+    }
+
+html, address,
+blockquote,
+body, dd, div,
+dl, dt, fieldset, form,
+frame, frameset,
+h1, h2, h3, h4,
+h5, h6, noframes,
+ol, p, ul, center,
+dir, hr, menu, pre  { display: block; }
+li                  { display: list-item; }
+head                { display: none; }
+table               { display: table; }
+tr                  { display: table-row; }
+thead               { display: table-header-group; }
+tbody               { display: table-row-group; }
+tfoot               { display: table-footer-group; }
+col                 { display: table-column; }
+colgroup            { display: table-column-group; }
+td, th              { display: table-cell; }
+caption             { display: table-caption; }
+html, body          { background: white; color: black; }
+a                   { color: blue; }
+th                  { font-weight: bolder; text-align: center; }
+caption             { text-align: center; }
+body                { overflow: auto; }
+h1                  { font-size: 2em; margin: .67em 0; }
+h2                  { font-size: 1.5em; margin: .75em 0; }
+h3                  { font-size: 1.17em; margin: .83em 0; }
+h4                  { font-size: 1em; margin: 1.12em 0; }
+h5                  { font-size: .83em; margin: 1.5em 0; }
+h6                  { font-size: .75em; margin: 1.67em 0; }
+p, blockquote, ul,
+fieldset, form,
+ol, dl, dir,
+cite, q, address,
+menu, pre           { margin: 1.12em 0; }
+h1, h2, h3, h4,
+h5, h6, b,
+em, dt, strong      { font-weight: bolder; }
+blockquote          { margin-left: 2.5em; margin-right: 2.5em; }
+dd, blockquote,
+cite, q             { text-indent: 1em; }
+i, cite, em,
+var, address        { font-style: italic; }
+pre, tt, code,
+kbd, samp           { font-family: "Courier New", Courier, monospace; }
+pre                 { white-space: pre; }
+button, textarea,
+input, object,
+select              { display: inline-block; }
+big                 { font-size: 1.27em; }
+small, sub, sup     { font-size: .83em; }
+sub                 { vertical-align: sub; }
+sup                 { vertical-align: super; }
+table               { border-collapse: collapse; border-spacing: 0.13em;
+                    caption-side: top; empty-cells: show; table-layout: auto; }
+thead, tbody,
+tfoot               { vertical-align: middle; }
+td, th              { vertical-align: inherit; }
+s, strike, del      { text-decoration: line-through; }
+hr                  { border: 0.06em inset; }
+ol, ul, dir,
+menu, dd            { margin-left: 2.5em; }
+ul, ol              { list-style-position: outside; }
+ol                  { list-style-type: decimal; }
+ul                  { list-style-type: disc; }
+ol ul, ul ol,
+ul ul, ol ol        { margin-top: 0; margin-bottom: 0; }
+u, ins              { text-decoration: underline; }
+center              { text-align: center; }
+abbr, acronym       { font-variant: small-caps; letter-spacing: 0.1em; }
+
+fieldset {
+
+    border: 0.15em gray ridge;
+    margin: 0.7em;
+    padding: 0.7em;
+    }
+
+optgroup, option {
+
+    display: block;
+    background: white;
+    color: black;
+    }
+
+optgroup    { font-weight: bold; }
+option      { text-indent: 2em; }
+textarea    { overflow: auto; }
+
+br:before   { content: "\A"; }
+
+a:link, a:link > img, a:hover,
+a:hover > img, a:active, a:active > img,
+a:visited, a:visited > img      { cursor: pointer; border: none; }
+
+a:link, a:visited               { text-decoration: underline; }
+a:hover                         { text-decoration: none; }
+a:active, a:active > img        { outline: thin dotted invert; }
+
+blockquote, cite, q { quotes: "\00AB" "\00BB" "\0022" "\0022"; }
+
+blockquote:lang(en), cite:lang(en), q:lang(en)  { quotes: "\0022" "\0022" "\0027" "\0027"; }
+blockquote:lang(es), cite:lang(es), q:lang(es)  { quotes: "\00AB" "\00BB" "\0022" "\0022"; }
+
+blockquote:before, cite:before, q:before        { content: open-quote; }
+blockquote:after, cite:after, q:after           { content: close-quote; }
+
+BDO[DIR="ltr"]  { direction: ltr; unicode-bidi: bidi-override; }
+BDO[DIR="rtl"]  { direction: rtl; unicode-bidi: bidi-override; }
+
+*[DIR="ltr"]    { direction: ltr; unicode-bidi: embed; }
+*[DIR="rtl"]    { direction: rtl; unicode-bidi: embed; }
+
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}

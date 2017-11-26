@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping  >
+	<class name="com.pxxy.djpt.bean.Admin" table="admin_tb" lazy="false">
+		<id name="admin_id">
+			<generator class="assigned"></generator> 
+		</id>
+		
+		<property name="psw"></property>
+		<property name="permission"></property>
+		<property name="name"></property>
+		<property name="type"></property>
+		<property name="xy"></property>
+		<property name="time"></property>
+	</class>
+	
+</hibernate-mapping>

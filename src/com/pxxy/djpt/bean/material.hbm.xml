@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping>
+	<class name="com.pxxy.djpt.bean.Material" table="material_tb" lazy="false">
+		<id name="materialId">
+			<generator class="identity"></generator> 
+		</id>
+		
+		<property name="userId"></property>
+		<property name="type"></property>
+		<property name="imgRef"></property>
+		<property name="fileRef"></property>
+		<property name="content"></property>
+		<property name="time"></property>
+		<property name="passed"></property>
+		<property name="rem"></property>
+		<property name="userName" formula="(select tb.name from stu_tb tb where userId=tb.stuId)"></property>
+		<property name="banji" formula="(select tb.banji from stu_tb tb where userId=tb.stuId)"></property>
+		
+	</class>
+</hibernate-mapping>

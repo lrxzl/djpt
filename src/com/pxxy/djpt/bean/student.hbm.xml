@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping  >
+	<class name="com.pxxy.djpt.bean.Student" table="stu_tb" lazy="false">
+		<id name="stuId">
+			<generator class="assigned"></generator> 
+		</id>
+		<property name="psw"></property>
+		<property name="name"></property>
+		<property name="headImg"></property>
+		<property name="state"></property>
+		<property name="time"></property>
+		<property name="sex"></property>
+		<property name="peiyangren"></property>
+		<property name="jiguan"></property>
+		<property name="chushentime"></property>
+		<property name="zaiduxueli"></property>
+		<property name="minzu"></property>
+		<property name="banji"></property>
+		<property name="rudanjieshaoren"></property>
+		<property name="tijiaorudanshenqintime" formula="(select tb.time from material_tb tb where tb.type='application' and tb.userId=stuId)"></property>
+		<property name="lieweirudanjijifenzitime" formula="(select tb.time from material_tb tb where tb.type='report1' and tb.userId=stuId)"></property>
+		<property name="liewweiyubeidantime"></property>
+		<property name="zhuangzhentime"></property>
+		<property name="fazhandanzhibushuji"></property>
+		<property name="danzhibushuji"></property>
+		<property name="suoshudanzhibu"></property>
+		<property name="jiatinzhuzhi"></property>
+		<property name="lianxidianhua"></property>
+		<property name="biyedanjidiaobo"></property>
+		<property name="beizhu"></property>
+		<property name="nextop"></property>
+	</class>
+	
+</hibernate-mapping>

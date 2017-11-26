@@ -1,0 +1,44 @@
+/** jQuery Gallery Plugin **/
+.gallery{
+  position: relative;
+  overflow: hidden;
+  height: 450px;
+  padding:8px 0 0 0;
+}
+.galleryBar {
+  position: absolute;
+  left: 0;
+  margin: 408px 0 0 35px;
+  padding: 0;
+  width:590px;
+  height:75px;
+  overflow:hidden;
+  display:none;
+}
+
+.galleryBar li {
+  position: relative;
+  margin: 0 5px 0 0;
+  padding: 0;
+  overflow: hidden;
+  float: left;
+  list-style: none;
+}
+
+.galleryBar li a{
+	outline:0;
+}
+
+.galleryScreen, .galleryInfo {
+  position: absolute;
+}
+
+.galleryScreen {
+	
+}
+.galleryInfo {
+ display:none;
+}
+.galleryTitle {
+ display:none;
+}

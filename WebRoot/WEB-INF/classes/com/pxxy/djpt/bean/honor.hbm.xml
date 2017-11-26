@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping>
+	<class name="com.pxxy.djpt.bean.Honor" table="honor_tb" lazy="false">
+		<id name="honorId">
+			<generator class="identity"></generator> 
+		</id>
+		<property name="stuId"></property>
+		<property name="term"></property>
+		<property name="type"></property>
+		<property name="content"></property>
+		<property name="img"></property>
+		<property name="atTime"></property>
+		<property name="time"></property>
+		<property name="jiangzhuxuejin"></property>
+		<property name="ronyuzhenshu"></property>
+		<property name="suorenganbu"></property>
+		<property name="canjiahuodong"></property>
+		<property name="chidaozaotui"></property>
+		<property name="kuanke"></property>
+		<property name="guake"></property>
+		<property name="qinshichayou"></property>
+		<property name="chufen"></property>
+	</class>
+</hibernate-mapping>

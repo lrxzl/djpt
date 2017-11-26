@@ -1,0 +1,162 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+body {
+	/* background: url(../img/bgc.jpg)no-repeat; */
+}
+.top,.container,.foot{
+	width: 1000px;
+	margin: auto;
+}
+.top .top_link{
+	width: 1000px;
+	height: 200px;
+	background: url(../img/logo.jpg)no-repeat;
+	
+}
+.login{
+	text-align: right;
+	padding-right:  40px;
+	padding-top: 10px;
+	color: #FFFFFF;
+}
+.login a{
+	color: #FFFFFF;
+	font-size: 16px;
+}
+.login a:hover{
+	text-decoration: underline;
+}
+.menubar{
+	width: 100%;
+	height: 40px;
+	background-color: #D90C13;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.menubar ul li{
+	float: left;
+	/*height: 50px;*/
+	line-height: 40px;
+	width: 166.6px;
+	font-size: 20px;
+	text-align: center;
+	font-family:"宋体";
+}
+.menubar ul li a{
+	color: white;
+	display: block;
+	width:166.7px ;
+}
+.menubar ul li a:hover{
+	background-color: #E80C13;
+}
+.container{
+	height: 1000px;
+	/*border: 1px solid #D6D6D6;*/
+}
+.container_left{
+	width: 250px;
+	height: 600px;
+	margin: 20px 10px;
+}	
+.all{
+	background: url(../img/qyt.jpg)no-repeat;
+	width: 230px;
+	height: 36px;
+}
+.prev{
+	height: 36px;
+	line-height: 28px;
+	font-size: 16px;
+	font-family: "宋体";	
+	margin-left: 20px;
+	color: white;
+	font-weight: bold;
+}
+.event{
+	width: 222px;
+	height: 564px;
+	margin-left: 6px;
+	margin-top: -8px;
+	padding: 10px 0px;
+	/*border: 1px solid #D6D6D6;*/
+	background-color: #FFFFFF;
+}
+.parent a{
+	float: left;
+	width:172px;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	color: #666666;
+	/*text-align:center;*/
+	padding-left: 50px;
+	font-size: 12px;
+	font-family:"微软雅黑";
+}
+.parent a:hover{
+	background: #EEEEEE;
+	color: black;
+}
+.parent .sub{
+	width: 172px;	
+	padding-left: 30px;
+	font-weight: bold;
+	display: none;	
+}
+.parent .sub a:hover{
+	background-color: #FFFFFF;
+}
+.main{
+	width: 730px;
+	height:900px;
+	float: right;
+	margin: auto;
+	margin-top: -620px;
+}
+.main_top{
+	width: 730px;
+}
+.main_link{
+	width:240px ;
+	height: 20px;
+}
+.main_link ul li{
+	float: left;
+}
+.main_link ul li a{
+	font-size: 12px;
+	font-family:"微软雅黑";
+	color: #636363;
+}
+.main_link ul li a:hover{
+	text-decoration: underline;
+}
+.line{
+	width: 700px;
+	height: 1px;
+	background: #D6D6D6;
+	margin-top: 8px;
+}
+
+.foot {
+    height: 120px;
+    margin-top: 20px;
+    
+    
+}
+.border{
+	border: 1px solid #dbdbdb;
+	margin-bottom: 20px;
+}
+.from{
+	text-align: center;
+    color: #636363;
+    line-height: 24px;
+}

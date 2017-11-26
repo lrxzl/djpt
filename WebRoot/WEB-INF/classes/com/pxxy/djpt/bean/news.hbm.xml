@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping  >
+	<class name="com.pxxy.djpt.bean.News" table="news_tb" lazy="false">
+		<id name="news_id">
+			<generator class="identity"></generator> 
+		</id>
+		<property name="title"></property>
+		<property name="content"></property>
+		<property name="type"></property>
+		<property name="source"></property>
+		<property name="time" update="false"></property>
+	</class>
+	
+</hibernate-mapping>

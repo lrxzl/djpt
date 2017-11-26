@@ -1,0 +1,310 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>首页</title>
+		<link rel="stylesheet" href="css/djpt/dangjian.css"/>
+		<script type="text/javascript" src="js/ScrollPic.js" ></script>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+	    <script type="text/javascript" src="js/jquery.slide.js"></script>
+	 	<script type="text/javascript">
+	    $(function () {
+	        /* banner图片左右滚动(循环轮播) */
+	        $(".w_ctr .JQ-slide").Slide({
+	            effect: "scroolX",
+	            speed: "normal",
+	            timer: 2000
+	        });
+
+    });
+
+</script>
+	<style type="text/css">a{text-decoration:none;}</style>
+	</head>
+	<body>
+		<!-- 头部 -->
+		<%@ include file="header.jsp" %>
+		<div class="content">
+			<div class="xin_img">
+       			<div class="w_ctr">
+          			<div class="JQ-slide">
+		                <ul class="JQ-slide-content" style="width: 2080px; left: 0px;">
+		                        <li>
+		                                <a href="#">
+		                                    <img src="img/lunbotu/c.jpg" width="417" height="276">
+		                                    <span>我校召开党委会学习宣传贯彻党的十九大精神</span>
+		                                </a>
+		                        </li>
+		                        <li>
+		                                <a href="#">
+		                                     <img src="img/lunbotu/e.jpg" width="417" height="276">
+		                                    <span>我校党委理论学习中心组集中学习“十九大”精神</span>
+		                                </a>
+		                        </li>
+		                        <li>
+		                                 <a href="#">
+		                                     <img src="img/lunbotu/b.jpg" width="417" height="276">
+		                                    <span>时任雷锋班第22任班长吴锡有莅校作报告</span>
+		                                </a>
+		                        </li>
+		                        <li>
+		                                <a href="#">
+		                                    <img src="img/lunbotu/a.jpg" width="417" height="276">
+		                                    <span>2017年江西省社科普及宣传周暨学术讲座周萍乡学院专场报告会圆满结束</span>
+		                                </a>
+		                        </li>
+		                        <li>
+		                                 <a href="#">
+		                                    <img src="img/lunbotu/f.jpg" width="417" height="276">
+		                                    <span>陈金印出席“纸·咫”纸本作品展开幕式</span>
+		                                </a>
+		                        </li>
+		                </ul>
+		                <ul class="JQ-slide-nav">
+	                        <li class="">0+1</li>
+	                        <li class="">1+1</li>
+	                        <li class="on">2+1</li>
+	                        <li class="">3+1</li>
+	                        <li class="">4+1</li>
+                		</ul>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="news_center" style="width:280px ;">
+		    	<div class="news_active" style="width: 280px">
+		            <span style="width: 106px;">党建动态</span>
+		            <div class="news_more" style="width: 174px;">
+		                <a href="#">更多&gt;&gt;</a>
+		            </div>
+		        </div>
+		        <div class="news_list">
+		        	<ul>
+		        		<li><a href="#">入党积极分子述职报告</a></li>
+		        		<li><a href="#">十九大党课学习</a></li>
+		        		<li><a href="#">党建知识竞赛</a></li>
+		        		<li><a href="#">党支部会议</a></li>
+		        		<li><a href="#">党支部社区活动</a></li>
+		        	</ul>
+		        </div>    
+		    </div>
+			<div class="news_right" style="width: 264px">
+				<div class="news_active" style="width: 264px">
+		            <span style="width: 106px;">党建公告</span>
+		            <div class="news_more" style="width: 158px;">
+		                <a href="#">更多&gt;&gt;</a>
+		            </div>
+		        </div>
+		        <div class="news_list">
+		        	<ul>
+		        		<li><a href="#">大一新生递交入党申请书时间</a></li>
+		        		<li><a href="#">九月份思想汇报递交时间</a></li>
+		        		<li><a href="#">党支部党课学习时间</a></li>
+		        		<li><a href="#">六月份思想汇报递交时间和要求</a></li>
+		        		<li><a href="#">上半年述职时间和要求</a></li>
+		        		<li><a href="#">个人材料书写要求</a></li>
+		        		<li><a href="#">季度汇报格式和要求</a></li>
+		        	</ul>
+		       	</div>
+		    </div>
+		    <div id="model_contents">
+				<div class="left">
+					<div class="title">学习十九大
+						<a href="#">更多&gt;&gt;</a>
+					</div>
+					<div class="left_content">
+						<ul>
+							<li>
+								<a href="#">牢固树立“四个意识”</a>
+							</li>
+							<li>
+								<a href="#">不忘初心，牢记使命</a>
+							</li>
+							<li>
+								<a href="#">高举中国特色社会主义</a>
+							</li>
+							<li>
+								<a href="#">明确决胜全面建成小康社会的重点</a>
+							</li>
+							<li>
+								<a href="#">坚定不移全面从严治党</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="model_center">
+					<div class="title">两学一做
+						<a href="#">更多&gt;&gt;</a>
+					</div>
+					<div class="left_content">
+						<ul>
+							<li>
+								<a href="#">贯彻“两学一做”，要“学”“做”配合</a>
+							</li>
+							<li>
+								<a href="#">开展“两学一做”，需内化于心、外化于行</a>
+							</li>
+							<li>
+								<a href="#">践行两学一做，提升党性修养</a>
+							</li>
+							<li>
+								<a href="#">两学一做，担当是标尺</a>
+							</li>
+							<li>
+								<a href="#">两学一做，担当是标尺</a>
+							</li>
+							<li>
+								<a href="#">两学一做，需融于心 表于行</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="right">
+					<div class="title">三会一课
+						<a href="#">更多&gt;&gt;</a>
+					</div>
+					<div class="left_content">
+						<ul>
+							<li>
+								<a href="#">学是基础，做是根本</a>
+							</li>
+							<li>
+								<a href="#">喜迎十九大，我们在行动</a>
+							</li>
+							<li>
+								<a href="#">学党章党规</a>
+							</li>
+							<li>
+								<a href="#">中国特色社会主义理论体系</a>
+							</li>
+							<li>
+								<a href="#">不忘初心，牢记使命</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<DIV class=rollphotos>
+				<DIV class=FixTitle>
+					<H3 style="color: #da9200;;">视图在线</H3>
+					<SPAN><A href="http://www.5icool.org/" target=_blank style="color: #340000;">更多&gt;&gt;</A></SPAN>
+				</DIV>
+				<DIV class=blk_29>
+					<DIV class=LeftBotton id=LeftArr></DIV>
+					<DIV class=Cont id=ISL_Cont_1>
+						<!-- 图片列表 begin -->
+						<DIV class=box>
+							<A class=imgBorder href="http://www.5icool.org/" target=_blank>
+								<img src="img/viewOnline/a.png" height=84 width=124 border=0/>
+							</A>
+							<P>
+								<A href="http://www.5icool.org/" target=_blank>信计学院开展党课学习</A>
+							</P>
+						</DIV>
+						<DIV class=box>
+							<A class=imgBorder href="http://www.5icool.org/" target=_blank>
+								<img src="img/viewOnline/b.jpg" height=84 width=124 border=0/>
+							</A>
+							<P>
+								<A href="http://www.5icool.org/" target=_blank>信计学院党支部开展党建活动</A>
+							</P>
+						</DIV>
+						<DIV class=box>
+							<A class=imgBorder href="http://www.5icool.org/" target=_blank>
+								<img src="img/viewOnline/c.jpg" height=84 width=124 border=0/>
+							</A>
+							<P>
+								<A href="http://www.5icool.org/" target=_blank>信计学院大学生骨干三下乡活动</A>
+							</P>
+						</DIV>
+						<DIV class=box>
+							<A class=imgBorder href="http://www.5icool.org/" target=_blank>
+								<img src="img/viewOnline/d.jpg" height=84 width=124 border=0/>
+							</A>
+							<P>
+								<A href="http://www.5icool.org/" target=_blank>学习十九大直播</A>
+							</P>
+						</DIV>
+						<DIV class=box>
+							<A class=imgBorder href="http://www.5icool.org/" target=_blank>
+								<img src="img/viewOnline/e.jpg" height=84 width=124 border=0/>
+							</A>
+							<P>
+								<A href="http://www.5icool.org/" target=_blank>喜迎十九大征文活动</A>
+							</P>
+						</DIV>
+						<DIV class=box>
+							<A class=imgBorder href="http://www.5icool.org/" target=_blank>
+								<img src="img/viewOnline/f.jpg" height=84 width=124 border=0/>
+							</A>
+							<P>
+								<A href="http://www.5icool.org/" target=_blank>喜迎十九大，书法大赛</A>
+							</P>
+						</DIV>
+						<DIV class=box>
+							<A class=imgBorder href="http://www.5icool.org/" target=_blank>
+								<img src="img/viewOnline/g.jpg" height=84 width=124 border=0/>
+							</A>
+							<P>
+								<A href="http://www.5icool.org/" target=_blank>喜迎十九大摄影大赛</A>
+							</P>
+						</DIV>
+						<DIV class=box>
+							<A class=imgBorder href="http://www.5icool.org/" target=_blank>
+								<img src="img/viewOnline/h.jpg" height=84 width=124 border=0/>
+							</A>
+							<P>
+								<A href="http://www.5icool.org/" target=_blank>信计学院党课学习</A>
+							</P>
+						</DIV>
+						<!-- 图片列表 end -->
+					</DIV>
+				<SCRIPT language=javascript type=text/javascript>
+		<!--//--><![CDATA[//><!--
+					var scrollPic_02 = new ScrollPic();
+					scrollPic_02.scrollContId   = "ISL_Cont_1"; //内容容器ID
+					scrollPic_02.arrLeftId      = "LeftArr";//左箭头ID
+					scrollPic_02.arrRightId     = "RightArr"; //右箭头ID
+			
+					scrollPic_02.frameWidth     = 908;//显示框宽度
+					scrollPic_02.pageWidth      = 152; //翻页宽度
+			
+					scrollPic_02.speed          = 10; //移动速度(单位毫秒，越小越快)
+					scrollPic_02.space          = 10; //每次移动像素(单位px，越大越快)
+					scrollPic_02.autoPlay       = true; //自动播放
+					scrollPic_02.autoPlayTime   = 0.5; //自动播放间隔时间(秒)
+					
+					scrollPic_02.initialize(); //初始化
+										
+					//--><!]]>
+				</SCRIPT>
+					<DIV class=RightBotton id=RightArr></DIV>
+				</DIV>
+		    <div class="friendly_link">
+		        <div class="link">
+		             <span>友情链接:</span>
+		                <a href="http://www.pxc.jx.cn/" target="_blank">萍乡学院</a> 
+		                <a href="http://sub.pxc.jx.cn:8086/">信息与计算机工程学院</a> 
+		                <a href="http://117.40.229.8/(5x1r0e45gmgjp2vn0z4c3j45)/default2.aspx">教务管理系统</a> 
+		                <a href="http://www.pxdj.gov.cn/">萍乡党建网</a> 
+		                <a href="http://www.jxjgdj.gov.cn/">江西党建网</a> 
+		                <a href="http://www.jxeea.cn/">江西教育考试院</a> 
+		                <a href="http://www.12371.cn/">共产党员网</a> 
+		               
+		        </div>
+   			</div>
+   			<div class="bottom">
+				<div class="bottom_top"></div>
+				<div class="bottom_bot">
+					<div class="bottom_p">
+						<p>中共萍乡学院信息与计算机工程学院委员会 © 2017 版权所有</p>
+							<p>电子邮箱：396101935@qq.com 备案证编号：赣ICP备1000000号-1</p>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</body>
+</html>

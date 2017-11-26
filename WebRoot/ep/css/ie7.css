@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+
+#block1{
+	height:310px;
+}
+
+#blockinfo1{
+	margin-top:-320px;
+}
+
+
+#footer{
+	margin:100px 0 0 20px;
+}
+
+#ieheight{
+	height:80px;
+}

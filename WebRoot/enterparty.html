@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/enterparty.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script>
+			$(document).ready(function() { 
+				$('.parent').click(function() {
+					var _this = $(this);
+					$('.parent').each(function() {
+						if(_this != $(this))
+							$('.parent').find(".sub").css("display","none");
+					});
+					$(this).find('.sub').toggle(500);
+				})
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="top">
+			<div class="top_link">
+				<div class="login">
+					<a href="#">登录 </a>|
+					<a href="#"> 帮助</a>
+				</div>
+			</div>
+			<div class="menubar">
+				<ul>
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="#">我要入党</a>
+					</li>
+					<li>
+						<a href="#">组织机构</a>
+					</li>
+
+					<li>
+						<a href="#">党员风采</a>
+
+					</li>
+					<li>
+						<a href="#">学习园地</a>
+					</li>
+
+					<li>
+						<a href="#">组织联系</a>
+
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--ProgressAction!loadMaterialPage?type=application-->
+		<div class="container">
+			<div class="container_left">
+				<div class="all">
+					<span class="prev">我要入党</span>
+				</div>
+				<div class="event">
+					<div class="parent" id="col-01">
+						<a href="personInfo.html" class="parent">个人信息</a>
+					</div>
+					<div class="parent" id="col-02">
+						<a href="#" class="parent">申请入党阶段</a>
+						<div class="sub">
+							<a href="#">入党申请书</a>
+							<a href="#">党组织派人谈话</a>
+						</div>
+					</div>
+					<div class="parent" id="col-03">
+						<a href="#" class="parent">入党积极分子阶段 </a>
+						<div class="sub">
+							<a href="#">填写考察登记表</a>
+							<a href="#">党课结业证书</a>
+							<a href="#">函调证明</a>
+							<a href="#">团员入党推荐表</a>
+							<a href="#">自传</a>
+							<a href="#">学习心得</a>
+							<a href="#">三月份思想汇报</a>
+							<a href="#">六月份思想汇报</a>
+							<a href="#">九月份思想汇报</a>
+							<a href="#">十二月份思想汇报</a>
+							<a href="#">学期奖惩情况和成绩</a>
+						</div>
+					</div>
+					<div class="parent" id="col-04">
+						<a href="#" class="parent">发展对象阶段</a>
+						<div class="sub">
+							<a href="#">业绩汇报</a>
+							<a href="#">三月党员评议</a>
+							<a href="#">五月非党员评议</a>
+							<a href="#">填写入党志愿书</a>
+						</div>
+					</div>
+					<div class="parent" id="col-05">
+						<a href="#" class="parent">预备党员阶段 </a>
+						<div class="sub">
+							<a href="#">党费收缴</a>
+							<a href="#">学习心得</a>
+							<a href="#">三月份思想汇报</a>
+							<a href="#">六月份思想汇报</a>
+							<a href="#">九月份思想汇报</a>
+							<a href="#">十二月份思想汇报</a>
+							<a href="#">学期奖惩情况和成绩</a>
+						</div>
+					</div>
+					<div class="parent " id="col-06">
+						<a href="#" class="parent">正式党员阶段</a>
+						<div class="sub">
+							<a href="#">重大精神新的体会</a>
+						</div>
+					</div>
+					<div class="parent" id="col-07">
+						<a href="#" class="parent">离校党员阶段</a>
+						<div class="sub">
+							<a href="#">组织转接</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main">
+				<div class="main_top">
+					<div class="main_link">
+						<ul>
+							<li>
+								<a href="#">首页</a>
+							</li>
+							<li>
+								<a href="#">&nbsp;>&nbsp; </a>
+							</li>
+							<li>
+								<a href="#"> 我要入党 </a>
+							</li>
+							<li>
+								<a href="#">&nbsp;>&nbsp; </a>
+							</li>
+							<li>
+								<a href="#"> 工作总结 </a>
+							</li>
+						</ul>
+					</div>
+					<div class="line">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foot">
+			<div class="border">
+
+			</div>
+			<div class="from">
+				<p>中共萍乡学院信息与计算机工程学院委员会 © 2017 版权所有</p>
+				<p>电子邮箱：396101935@qq.com 备案证编号：赣ICP备xxxxxx</p>
+			</div>
+		</div>
+	</body>
+
+</html>

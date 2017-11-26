@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+ 	<!-- struts2 是否允许url 动态访问方法 ,默认值是true -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	
+	<!-- struts2的action对象 也来源于spring的IoC容器 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.multipart.maxSize" value="1000000000" />
+	<constant name="struts.multipart.saveDir" value="C:\\MyFiles\\uploadTempPath"/>
+	
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<interceptors>
+			<interceptor name="interceptor1" class="com.pxxy.djpt.servlet.MyInterceptor">
+				<param name="excludeMethods">login,logout</param> 
+            </interceptor>
+            <interceptor-stack name="userInterceptor">
+            	<interceptor-ref name="defaultStack"></interceptor-ref>
+                <interceptor-ref name="interceptor1"></interceptor-ref>
+            </interceptor-stack>
+		</interceptors>
+		
+		<global-results>
+              <result name="denied">/sub/denied.jsp</result>
+        </global-results>
+        
+		<action name="NewsAction" class="NewsActionBean">
+			<result name="input">/admin/login.jsp</result>
+			<result name="success">/success.jsp</result>
+			<result name="index">/index.jsp</result>
+			<result name="newsList">/admin/newsList.jsp</result>
+			<result name="newsEdit">/admin/newsEdit.jsp</result>
+			<result name="newsAdd">/admin/newsAdd.jsp</result>
+			<result name="newsContent">/sub/newsContent.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+		</action>
+		
+		<!-- <action name="StudentAction" class="StudentActionBean">
+			<result name="success">/success.jsp</result>
+			<result name="stuInfo">/admin/stuInfo.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+		</action> -->
+		
+		<action name="AdminAction" class="AdminActionBean">
+			<result name="input">/admin/login.jsp</result>
+			<result name="success">/admin/admin.jsp</result>
+			<result name="stuInfo">/admin/stuInfo.jsp</result>
+			<result name="stuList">/admin/stuList.jsp</result>
+			<result name="adminList">/admin/admin.jsp</result>
+			<result name="export">/admin/export.jsp</result>
+			
+			<result name="materialList">/admin/materialList.jsp</result>
+			<result name="materialPassed">/admin/materialPassed.jsp</result>
+			<result name="materialReject">/admin/materialReject.jsp</result>
+			<interceptor-ref name="userInterceptor"></interceptor-ref>
+		</action>
+		
+	</package>
+	
+	<package name="user" namespace="/" extends="struts-default">
+		<global-results>
+              <result name="denied">/sub/denied.jsp</result>
+        </global-results>
+        
+		<action name="NewsAction" class="NewsActionBean">
+			<result name="success">/success.jsp</result>
+			<result name="index">/index.jsp</result>
+			<result name="newsList">/sub/newsList.jsp</result>
+			<result name="newsContent">/sub/newsContent.jsp</result>
+		</action>
+		
+		<action name="StudentAction" class="StudentActionBean">
+			<result name="success">/index.jsp</result>
+			<result name="index">/index.jsp</result>
+			<result name="stuInfo">/stuInfo.jsp</result>
+			<result name="stuList">/stuInfo.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="input">/login.jsp</result>
+			<result name="honor">/honor.jsp</result>
+		</action>
+		
+		<action name="ProgressAction" class="ProgressActionBean">
+			<result name="progress">/ep/progress.jsp</result>
+			<result name="login">/login.jsp</result>
+			<result name="applicationBook">/applicationBook.jsp</result>
+			<result name="material">/material.jsp</result>
+			<result name="monthReport">/monthReport.jsp</result>
+		</action>
+		
+	</package>
+	
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<package name="json" namespace="/admin" extends="json-default">
+		<action name="AjaxAction" class="AjaxActionBean" >
+			<result type="json">
+				<param name="noCache">true</param>
+				<param name="contentType">text/html</param>
+			</result>
+		</action>
+	</package>
+	
+	<!-- 2017-11-8 -->
+	<package name="chart" namespace="/" extends="json-default">
+		<action name="ChartAction" class="ChartActionBean">
+			<result type="json">
+				   <param name="root">result</param>
+				  <!-- <param name="success">/chart.jsp</param>
+ -->		</result>
+		</action>
+	</package>
+	
+</struts>
+

@@ -1,0 +1,63 @@
+配置hibernate
+1. 添加hibernate的jar包,mysql 的连接驱动jar包
+2. 添加核心配置文件： hibernate.cfg.xml
+3. 添加映射文件： user.hbm.xml
+
+4. 编程： 
+	session:一级缓存     
+		第一次查询订单---------连接数据库，从数据库中查询加载--------- 8个订单对象----------session 中保存这8个订单对象
+		
+		
+		第二次查询订单 --------先从一级缓存session中查询，若有，则直接返回该8个订单对象，
+							若没有呢？从二级缓存sessionFactory中查询，若有，则直接返回该8个订单对象，
+							若二级缓存中没有，--------连接数据库，从数据库中查询加载----。。。。。
+		
+		
+	sessionFactory:二级缓存
+
+hibernate 的核心技术：
+ 	ORM(Object Relation Mapping) 对象关联映射
+ 	
+ 	User ----tb_user
+ 	
+ 	
+ ***********************************SPRING*********************************************************
+ 1.IoC
+ 2.AOP 底层原理支持：代理模式 （a. JDK动态代理 b. cglib代理）
+ 
+ 
+ 缺陷：
+  	1. 接口的实现子类在上一层被暴露出来，没有实现接口的意义
+  	2. dao层对象的生命周期 由上一层Action层的管理，没有实现MVC中的模块化
+  	
+ 解决：
+ 	将某些对象交由第三方容器（Spring IoC）来管理
+ 	
+ 	<!-============== Inversion of Control   简称IoC,   控制反转==================>
+	控制反转（IoC=Inversion of Control）IoC，就是由容器控制程序之间的（依赖）关系，而非传统实现中，由程序代码直接操控。
+	这也就是所谓“控制反转”的概念所在：（依赖）控制权由应用代码中转到了外部容器，控制权的转移，是所谓反转。
+ 	
+ 	
+ 配置spring环境：
+ 	
+ spring与struts2整合：
+ 	struts2的action对象 也来源于spring的IoC容器
+ 	1. 添加spring.jar
+ 	2. 添加struts2-spring-plugin-2.3.15.3.jar
+ 	3. 在struts.xml文件中 配置 action对象的来源 
+ 		<constant name="struts.objectFactory" value="spring"></constant>
+ 	4.添加applicationContext.xml文件
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

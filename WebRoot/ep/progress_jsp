@@ -1,0 +1,674 @@
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+
+<meta name="description" content="Some description of your site" />
+<meta name="keywords" content="wirte your keywords here" />
+
+<link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+
+<!--START JQUERY TABS-->
+<script src="js/jquery-1.js"></script>
+    <script>
+	
+	  // When the document loads do everything inside here ...
+	  $(document).ready(function(){
+		
+		// When a link is clicked
+		$("a.tab").click(function () {
+			
+			
+			// switch all tabs off
+			$(".active").removeClass("active");
+			
+			// switch this tab on
+			$(this).addClass("active");
+			
+			// slide all content up
+			$(".content").slideUp();
+			
+			// slide this content up
+			var content_show = $(this).attr("title");
+			$("#"+content_show).slideDown();
+		  
+		});
+	  });
+  </script>
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" media="screen" href="css/ie6.css" />
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" media="screen" href="css/ie7.css" />
+<![endif]-->
+
+<!--START CUFON-->
+		<script src="js/cufon-yui.js" type="text/javascript"></script>
+		<script src="js/vegur_300-vegur_700.font_59edcbff.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			Cufon.replace('h1'); 
+			Cufon.replace('h2'); 
+			Cufon.replace('h3'); 
+			Cufon.replace('.service_title');
+			Cufon.replace('th');
+			Cufon.replace('#slogan');
+			Cufon.replace('	ul.tabs li a ');
+		</script>
+    
+<!--END CUFON-->
+
+
+<!-- Images Fade -->
+<script type="text/javascript" src="js/jquery.js">
+</script>
+<script type='text/javascript'>
+$(document).ready(function(){
+$("img.a").hover(
+function() {
+$(this).stop().animate({"opacity": "0"}, "slow");
+},
+function() {
+$(this).stop().animate({"opacity": "1"}, "slow");
+
+
+ });
+});
+</script>
+
+
+<!-- JS -->
+<script type="text/javascript" src="lib/end6.js"></script>
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="lib/stickypanel.js"></script>
+<script type="text/javascript" src="lib/waypoints.js"></script>
+<script type="text/javascript" src="lib/nivo.js"></script>
+<script type="text/javascript" src="lib/scrollTo.js"></script>
+<script type="text/javascript" src="lib/colorbox.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script type="text/javascript" src="slide/main.js"></script>
+
+<!-- Fancybox -->
+<script type="text/javascript" src="fancybox/fancybox/jquery.mousewheel-3.0.2.pack.js">
+</script>
+<script type="text/javascript" src="fancybox/fancybox/jquery.fancybox-1.3.1.js">
+</script>
+<link rel="stylesheet" type="text/css" href="fancybox/fancybox/jquery.fancybox-1.3.1.css" media="screen" />
+<script type="text/javascript">
+//<![CDATA[
+                $(document).ready(function() {
+                      
+
+                 $("a[rel=example_group]").fancybox({
+                                'transitionIn'  : 'elastic',
+                                'transitionOut' : 'elastic',
+                                'titlePosition'         : 'over',
+                                'titleFormat'           : function(title, currentArray, currentIndex, currentOpts) {
+                                        return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '<\/span>';
+                                }
+                        });
+
+                });
+//]]>
+</script>
+
+<!-- Tooltips -->
+<script type="text/javascript">
+$(document).ready(function() {
+    //Tooltips
+    $(".tip_trigger").hover(function(){
+        tip = $(this).find('.tip');
+        tip.show(); //Show tooltip
+    }, function() { 
+        tip.hide(); //Hide tooltip
+    }).mousemove(function(e) {
+        var mousex = e.pageX + -200; //Get X coodrinates
+        var mousey = e.pageY + 20; //Get Y coordinates
+        var tipWidth = tip.width(200); //Find width of tooltip
+        var tipHeight = tip.height(); //Find height of tooltip
+
+        //Distance of element from the right edge of viewport
+        var tipVisX = $(window).width() - (mousex + tipWidth);
+        //Distance of element from the bottom of viewport
+        var tipVisY = $(window).height() - (mousey + tipHeight);
+
+        if ( tipVisX < 20 ) { //If tooltip exceeds the X coordinate of viewport
+            mousex = e.pageX - tipWidth - 20;
+        } if ( tipVisY < 20 ) { //If tooltip exceeds the Y coordinate of viewport
+            mousey = e.pageY - tipHeight - 20;
+        }
+        //Absolute position the tooltip according to mouse position
+        tip.css({  top: mousey, left: mousex });
+    });
+});</script>
+<script type="text/javascript" src="js/laydate.js"></script>
+
+<style type="text/css">
+.step-content {
+	padding-left:30px;
+	padding-right:30px;
+	width:860px;
+	margin-left: auto;
+	margin-right: auto;
+	color: graytext;
+}
+.content td {
+ text-align: right;
+ max-width: 180px;
+}
+#img-box img {
+	max-width: 128px; 
+	max-height: 128px;
+}
+</style>
+<!-- Shared on MafiaShare.net  --><!-- Shared on MafiaShare.net  --></head>
+
+<body>
+<div id="line"> </div>
+<div id="sky">
+  <div id="wrapper">
+    <div id="Home">
+      <div id="header">
+        <div id="logo">
+        <!-- <div id="slogan">YOUR COMPANY SLOGAN OR SOME TEXT GOES HERE </div> -->
+        </div>
+      </div>
+      <div id="menu">
+        <ul id='nav'>
+          <li id="menu1"> <a class="selected" href="#step1" tabindex="1">Step1</a> </li>
+          <li id="menu2"> <a href="#step2" tabindex="2">Step2</a> </li>
+          <li id="menu3"> <a href="#step3" tabindex="3">Step3</a> </li>
+          <li id="menu4"> <a href="#step4" tabindex="4">Step4</a> </li>
+          <li id="menu5"> <a href="#step5" tabindex="5">Step5</a> </li>
+          <li id="menu6"> <a href="#step6" tabindex="6">Step6</a> </li>
+        </ul>
+      </div>
+      <div class="block" id="step0">
+      
+ <!--Start Nivo Slider-->
+ 
+        <div id="sliderbox">
+          <div id="slider" class="nivoSlider"> <img src="img/slider/slider01.jpg" alt="" title="This is an example of a caption"/> <img src="img/slider/slider02.jpg" alt="" title="This is an example of a caption"/> <img src="img/slider/slider03.jpg" alt="" title="This is an example of a caption"/> <img src="img/slider/slider01.jpg" alt="" title="This is an example of a caption"/> <img src="img/slider/slider02.jpg" alt="" title="This is an example of a caption"/> 
+          
+         </div>
+          
+           <!--Start Nivo Slider Caption-->
+           
+         
+        </div>
+        
+         <!--End  Nivo Slider-->
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+    <div class="block" id="step1" >
+      <div class="br"></div>
+      <b><li style="color: gray;">完善个人信息</li></b>
+      
+      <div class="step-content ">
+       <div class="content">
+	  <form id="msform" action="StudentAction!updateStuInfo" method="post">
+		  <table>
+			  <tr>
+			  	<td>学号：</td>
+			  	<td><input type="text" name="stu.stu_id" value="${stu.stu_id}" /></td>
+			  	<td>姓名：</td>
+			  	<td><input type="text" name="stu.name" value="${stu.name}" /></td>
+			  	<td>头像：</td>
+			  	<td>
+				  	<input id="input_img_base64" type="hidden" name="stu.head_img" value="${stu.head_img}"/>
+				  	<div id="img-box"><img src="${stu.head_img}"/></div>
+				  	<input id="file_input" type="file"/>
+			  	</td>
+			  </tr>
+			  
+			  <tr>
+			  	<td>身份：</td>
+			  	<td><input type="text" name="stu.identity" value="${stu.identity}" /></td>
+			  	<td>身份证：</td>
+			  	<td><input type="text" name="stu.identification" value="${stu.identification}" /></td>
+			  </tr>
+			  
+			  <tr>
+			  	<td>出生日期：</td>
+			  	<td><input class="laydate-icon" id="demo1" type="text" name="stu.birth" value="${stu.birth}" /></td>
+			  	<td>性别：</td>
+			  	<td><input type="text" name="stu.sex" value="${stu.sex}" /></td>
+			  	<td>出生地：</td>
+			  	<td><input type="text" name="stu.birth_place" value="${stu.birth_place}" /></td>
+			  </tr>
+			  
+			  <tr>
+			  	<td>民族：</td>
+			  	<td><input type="text" name="stu.nation" value="${stu.nation}" /></td>
+			  	<td>籍贯：</td>
+			  	<td><input type="text" name="stu.province" value="${stu.province}" /></td>
+			  </tr>
+			  
+			  <tr>
+			  	<td>学历：</td>
+			  	<td><input type="text" name="stu.qualification" value="${stu.qualification}" /></td>
+			  	<td>毕业学校：</td>
+			  	<td><input type="text" name="stu.graduate_school" value="${stu.graduate_school}" /></td>
+			  </tr>
+			  
+			  <tr>
+			  	<td>电话：</td>
+			  	<td><input type="text" name="stu.phone" value="${stu.phone}" /></td>
+			  	<td>email：</td>
+			  	<td><input type="text" name="stu.email" value="${stu.email}" /></td>
+			  </tr>
+			  
+			  <tr>
+			  	<td>户口所在地：</td>
+			  	<td><input type="text" name="stu.registered_residence_address" value="${stu.registered_residence_address}" /></td>
+			  	<td>当前居住地址：</td>
+			  	<td><input type="text" name="stu.living_address" value="${stu.living_address}" /></td>
+			  </tr>
+			  
+			  <tr>
+			  	<td>加入的党支部：</td>
+			  	<td><input type="text" name="stu.joined_party_branches" value="${stu.joined_party_branches}" /></td>
+			  	<td>单位地址：</td>
+			  	<td><input type="text" name="stu.unit_address" value="${stu.unit_address}" /></td>
+			  	<td>单位性质：</td>
+			  	<td><input type="text" name="stu.unit_property" value="${stu.unit_property}" /></td>
+			  </tr> 
+			  
+			  <tr>
+			  	<td>培养人：</td>
+			  	<td><input type="text" name="stu.trainner" value="${stu.trainner}" /></td>
+			  	<td>入党介绍人：</td>
+			  	<td><input type="text" name="stu.introducer" value="${stu.introducer}" /></td>
+			  </tr>
+			  
+			  <tr>
+			  	<td>列入预备党员时间：</td>
+			  	<td><input class="laydate-icon" id="demo2" type="text" name="stu.prepared_time" value="${stu.prepared_time}" /></td>
+			  	<td>转正时间：</td>
+			  	<td><input class="laydate-icon" id="demo3" type="text" name="stu.tobe_regular_time" value="${stu.tobe_regular_time}" /></td>
+			  </tr>
+			  
+			  <tr>
+			  	<td>状态：</td>
+			  	<td><input type="text" name="stu.state" value="${stu.state}" /></td>
+			  </tr>
+			  
+			  <tr>
+			  	<td>党支部书记：</td>
+			  	<td><input type="text" name="stu.party_branch_secretary" value="${stu.party_branch_secretary}" /></td>
+			  	<td>毕业党籍调拨：</td>
+			  	<td><input type="text" name="stu.party_membership_transfer" value="${stu.party_membership_transfer}" /></td>
+			  </tr>
+			  <tr>
+			  	<td>其他：</td>
+			  	<td><input type="text" name="stu.others" value="${stu.others}" /></td>
+			  </tr>
+		  </table>
+		  <input type="submit" value="提交"/>
+	  </form>
+		</div>
+      </div>
+    </div>
+    
+    <div class="block" id="step2">
+      <div class="br"></div>
+      <!-- <h2 style="text-align:center;">提交思想汇报</h2> -->
+      <b><li style="color: gray;">填写第一次思想汇报</li></b>
+      <div style="font-size: 18px">请填写第一次思想汇报，纸质稿请拍好照片上传</div>
+      <div id="youtube">   <!-- Your video here --> 
+      	<form action="StudentAction!tesk1" method="post">
+      		<textarea type="text" class="" name="material.content"></textarea>
+      		<input type="file" name="material.imgRef" />
+      		<input type="file" name="material.fileRef" />
+      		<input type="submit" />
+      	</form>
+      </div>
+      <div class="bar">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</div>
+      <div class="clearfix"> </div>
+    </div>
+    
+    
+    <div class="block" id="step3">
+      <div class="br" ></div>
+      <b><li style="color: gray;">填写第二次思想汇报</li></b>
+      <div id="blockinfo8">
+         
+           <!--Tabbed Boxes-->
+      
+   <div id="tabbed_box_1" class="tabbed_box" style="margin-bottom: 10px;">
+	<!-- <h2 style="margin-left: 0px;">Tabbed Content Area </h2> -->
+	<div style="font-size: 24px">请填写第二次思想汇报，纸质稿请拍好照片上传</div>
+    <div class="tabbed_area">
+    
+        <ul class="tabs">
+            <li><a href="#" title="content_1" class="tab active">Topics</a></li>
+            <li><a href="#" title="content_2" class="tab">Archives</a></li>
+            <li><a href="#" title="content_3" class="tab">Pages</a></li>
+            
+        </ul>
+        
+        <div id="content_1" class="content">
+        	<ul>
+            	<li><a href="">Our Services<small>4 Posts</small></a></li>
+            	<li><a href="">CSS Styling <small>32 Posts</small></a></li>
+            	<li><a href="">Flash Tutorials <small>2 Posts</small></a></li>
+            	<li><a href="">Web Miscellanea <small>19 Posts</small></a></li>
+            	<li><a href="">Site News <small>6 Posts</small></a></li>
+            	<li><a href="">We help you<small>8 Posts</small></a></li>
+			</ul>
+        </div>
+        <div id="content_2" class="content">
+        	<ul>
+            	<li><a href="">December 2008 <small>6 Posts</small></a></li>
+            	<li><a href="">November 2008 <small>4 Posts</small></a></li>
+            	<li><a href="">October 2008 <small>22 Posts</small></a></li>
+            	<li><a href="">September 2008 <small>12 Posts</small></a></li>
+            	<li><a href="">August 2008 <small>3 Posts</small></a></li>
+            	<li><a href="">July 2008 <small>1 Posts</small></a></li>
+			</ul>
+        </div>
+        <div id="content_3" class="content">
+        	<ul>
+            	<li><a href="">Home</a></li>
+            	<li><a href="">About</a></li>
+            	<li><a href="">Contribute</a></li>
+            	<li><a href="">Contact</a></li>
+			</ul>
+        </div>
+    
+    </div>
+
+</div>  <!--END Tabbed Boxes-->
+         
+                  <!-- Table Style--></p>
+      </div><p>
+        
+         <!-- Lists-->
+        
+          <div class="basic_columns one_fourth" style="margin-left: 25px;">
+					<h2 style="text-align: left; margin-left: 0px;">Arrow List</h2>
+					<ul class="ul_arrow_list">
+						<li>Arrow List 1</li>
+						<li>Arrow List 2</li>
+						<li>Arrow List 3</li>
+						<li>Arrow List 4</li>
+						<li>Arrow List 5</li>
+					</ul>
+	  </div>
+				
+				<div class="basic_columns one_fourth">
+					<h2 style="text-align: left; margin-left: 0px;">Check List</h2>
+					<ul class="ul_check_list">
+						<li>Check List 1</li>
+						<li>Check List 2</li>
+						<li>Check List 3</li>
+						<li>Check List 4</li>
+						<li>Check List 5</li>
+					</ul>
+				</div>
+				
+				<div class="basic_columns one_fourth">
+					<h2 style="text-align: left; margin-left: 0px;">Star List</h2>
+					<ul class="ul_star_list">
+						<li>Star List 1</li>
+						<li>Star List 2</li>
+						<li>Star List 3</li>
+						<li>Star List 4</li>
+						<li>Star List 5</li>
+					</ul>
+				</div>
+				
+				<div class="basic_columns one_fourth last">
+					<h2 style="text-align: left; margin-left: 0px;">Plus List</h2>
+					<ul class="ul_plus_list">
+						<li>Plus List 1</li>
+						<li>Plus List 2</li>
+						<li>Plus List 3</li>
+						<li>Plus List 4</li>
+						<li>Plus List 5</li>
+					</ul>
+				</div>  
+
+                <!-- Info Box-->
+         <h2 style="">Info box</h2>
+        <div class="infobox" style="margin-bottom: 30px; ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam  nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</div>
+         
+         <div id="blockinfo8" style="margin-top: 40px;">
+        <h2 style="margin-left:0px;">Full width text with tooltip</h2>
+        <p>Lorem <a href="#" class="tip_trigger">Ipsum <span class="tip">This will show up in the tooltip</span></a>  ipsum dolor sit amet, sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, <a href="#" class="tip_trigger">Lorem <span class="tip">This will show up in the tooltip</span></a> ipsum et justo do dolores.     Lorem ipsum dolor sit.
+         </div>
+        
+      <div id="blockinfo6">
+        <h2 style="margin-left:0px;"> Your headline here </h2>
+        <!-- Your text areas starts here -->
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing ipsum et justo do dolores. </p>
+        <a href="#" class="button" style="margin-left:0px;" target="_blank">read more</a> </div>
+      <div id="blockinfo7">
+        <h2 style="margin-left:0px;"> Text with tooltips</h2>
+        <p>Lorem <a href="#" class="tip_trigger">Ipsum <span class="tip">This will show up in the tooltip</span></a>  ipsum dolor sit amet, sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, <a href="#" class="tip_trigger">Lorem <span class="tip">This will show up in the tooltip</span></a> ipsum et justo do dolores.     Lorem ipsum dolor sit.
+        <a href="#" style="margin-left:0px;" class="button" target="_blank">read more</a> </div>
+        
+      <div class="clearfix"> </div>
+    </div>
+    <div class="block" id="step4">
+      <div class="br"></div>
+      <div id="blockcontact">
+        <h2 style="margin-top:10px;"> Contact us</h2>
+        <p>If you are interested in working together with us please feel free to get in contact with us. We will answer your questions as soon as possible. Thanks for your interest. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy!</p>
+        <div id="contactform"></div>
+        <form method="post" action="#" id="contact">
+          <input name="name"  type="text" value="Name" maxlength="255" />
+          <input name="tel" type="text" value="Phone" maxlength="20" />
+          <input name="email1" type="text" value="E-Mail" maxlength="255" />
+          <input name="email2" type="text" value="confirm E-Mail" maxlength="255" />
+          <textarea rows="10" name="message" cols="50" id="message">Write your text
+          </textarea>
+          <a href="#" class="button" id="send">SEND</a>
+        </form>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+    
+    <div class="block" id="step5">
+      <div class="br"></div>
+      <div id="blockcontact">
+        <h2 style="margin-top:10px;"> Contact us</h2>
+        <p>If you are interested in working together with us please feel free to get in contact with us. We will answer your questions as soon as possible. Thanks for your interest. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy!</p>
+        <div id="contactform"></div>
+        <form method="post" action="#" id="contact">
+          <input name="name"  type="text" value="Name" maxlength="255" />
+          <input name="tel" type="text" value="Phone" maxlength="20" />
+          <input name="email1" type="text" value="E-Mail" maxlength="255" />
+          <input name="email2" type="text" value="confirm E-Mail" maxlength="255" />
+          <textarea rows="10" name="message" cols="50" id="message">Write your text
+          </textarea>
+          <a href="#" class="button" id="send">SEND</a>
+        </form>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+    
+    
+    <div class="block" id="step6">
+      <div class="br"></div>
+      <div id="blockcontact">
+        <h2 style="margin-top:10px;"> Contact us</h2>
+        <p>If you are interested in working together with us please feel free to get in contact with us. We will answer your questions as soon as possible. Thanks for your interest. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy!</p>
+        <div id="contactform"></div>
+        <form method="post" action="#" id="contact">
+          <input name="name"  type="text" value="Name" maxlength="255" />
+          <input name="tel" type="text" value="Phone" maxlength="20" />
+          <input name="email1" type="text" value="E-Mail" maxlength="255" />
+          <input name="email2" type="text" value="confirm E-Mail" maxlength="255" />
+          <textarea rows="10" name="message" cols="50" id="message">Write your text
+          </textarea>
+          <a href="#" class="button" id="send">SEND</a>
+        </form>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+    <div id="footer" class="clearfix"></div>
+  </div>
+</div>
+<div id="foot">
+  <div id="foottext"> © Copyright 2011 Your Company - All Rights Reserved. More Templates <a href=" " target="_blank" title="模板之家">模板之家</a> - Collect from <a href="#" title=" " target="_blank">aaaa</a>
+      <!--Social Networks-->
+      <a href="#"><img src="img/images/facebook.png" style="float: right; margin-left: 5px;margin-right: 30px;" width="16" height="16" /></a>
+
+<a href="#"><img src="img/images/myspace.png" style="float: right;margin-left: 5px;"  width="16" height="16" alt="myspace" /></a>
+
+       <a href="#"><img src="img/images/twitter.png" style="float: right;margin-left: 5px;"  width="16" height="16" alt="twitter" /></a> 
+       
+       <a href="#"><img src="img/images/linkedin.png" style="float: right;margin-left: 5px;" width="16" height="16" alt="linkedin" /></a></div>
+</div>
+<!--[if IE 7]>
+<div id="ieheight"></body>
+<![endif]-->
+<div style="display:none"> </div>
+
+<script type="text/javascript">
+			!function(){
+			
+				laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+			
+				laydate({elem: '#demo'});//绑定元素
+				laydate({elem: '#demo1'});
+				laydate({elem: '#demo2'});
+				laydate({elem: '#demo3'});
+				laydate({elem: '#demo4'});
+			}();
+
+		//日期范围限制
+		
+		var start = {
+		
+		    elem: '#start',
+		
+		    format: 'YYYY-MM-DD',
+		
+		    min: laydate.now(), //设定最小日期为当前日期
+		
+		    max: '2099-06-16', //最大日期
+		
+		    istime: true,
+		
+		    istoday: false,
+		
+		    choose: function(datas){
+		
+		         end.min = datas; //开始日选好后，重置结束日的最小日期
+		
+		         end.start = datas //将结束日的初始值设定为开始日
+		
+		    }
+		
+		};
+		
+		
+		
+		var end = {
+		
+		    elem: '#end',
+		
+		    format: 'YYYY-MM-DD',
+		
+		    min: laydate.now(),
+		
+		    max: '2099-06-16',
+		
+		    istime: true,
+		
+		    istoday: false,
+		
+		    choose: function(datas){
+		
+		        start.max = datas; //结束日选好后，充值开始日的最大日期
+		
+		    }
+		
+		};
+		
+		laydate(start);
+		
+		laydate(end);
+		
+		
+		
+		//自定义日期格式
+		
+		laydate({
+		
+		    elem: '#test1',
+		
+		    format: 'YYYY年MM月DD日',
+		
+		    festival: true, //显示节日
+		
+		    choose: function(datas){ //选择日期完毕的回调
+		
+		        alert('得到：'+datas);
+		
+		    }
+		
+		});
+		
+		
+		
+		//日期范围限定在昨天到明天
+		
+		laydate({
+		
+		    elem: '#hello3',
+		
+		    min: laydate.now(-1), //-1代表昨天，-2代表前天，以此类推
+		
+		    max: laydate.now(+1) //+1代表明天，+2代表后天，以此类推
+		
+		});
+		
+		</script>
+
+<script type="text/javascript" src="js/dist/lrz.bundle.js?v=7687367"></script>
+  <script type="text/javascript">
+  /*var tds = document.getElementsByTagName("input");
+  for(var i=0;i<tds.length;i++) {
+  	tds[i].value = tds[i].name + Math.floor(Math.random() * 1000);
+  }*/
+	document.getElementById('file_input').addEventListener('change', function () {
+		var that = this;
+		if(that.value.indexOf(".gif")>0){
+			alert('请上传静态图片');
+			return;
+		}
+		lrz(that.files[0], {
+		    width: 800,
+		})
+		.then(function (rst) {
+		    var img = new Image();
+		    img.height = 50;
+		    var div = document.getElementById('img-box');
+		    div.innerHTML = "";
+		    div.appendChild(img);
+		    img.src = rst.base64;
+		    
+		    var input_img_base64 = document.getElementById('input_img_base64');
+		    input_img_base64.value = rst.base64;
+		    
+		    return rst;
+		});
+	});
+	</script>
+	
+	
+	
+</body>
+
+</html>

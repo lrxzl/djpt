@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:context="http://www.springframework.org/schema/context" xmlns:jee="http://www.springframework.org/schema/jee"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+ 	
+ 	
+ <!--======================================== 1. 配置sessionFactory========================================  -->
+ 	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+ 		<property name="configLocation">
+ 			<value>classpath:hibernate.cfg.xml</value>
+ 		</property>
+ 	</bean>
+ 
+  <!-- ======================================== 配置hibernateTemplate对象========================================-->
+	 <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+	 	<property name="sessionFactory" ref="sessionFactory"></property>
+	 </bean>
+	 
+	 
+	 <bean id="DaoImplBean" class="com.pxxy.djpt.dao.impl.DaoImpl">
+	 	<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	 </bean>
+	 
+	 <bean id="ServiceImplBean" class="com.pxxy.djpt.service.impl.ServiceImpl">
+	 	<property name="dao" ref="DaoImplBean"></property>
+	 </bean>
+	 
+	 <bean id="NewsBean" class="com.pxxy.djpt.bean.News"></bean>
+	 <bean id="NewsActionBean" class="com.pxxy.djpt.action.NewsAction" scope="prototype">
+	 	<property name="service" ref="ServiceImplBean"></property>
+	 	<property name="news" ref="NewsBean"></property>
+	 </bean>
+	 
+	 <bean id="StudentBean" class="com.pxxy.djpt.bean.Student"></bean>
+	 <bean id="StudentActionBean" class="com.pxxy.djpt.action.StudentAction" scope="prototype">
+	 	<property name="service" ref="ServiceImplBean"></property>
+	 	<property name="stu" ref="StudentBean"></property>
+	 </bean>
+	 
+	 <bean id="AdminBean" class="com.pxxy.djpt.bean.Admin"></bean>
+	 <bean id="HonorBean" class="com.pxxy.djpt.bean.Honor"></bean>
+	 <bean id="AdminActionBean" class="com.pxxy.djpt.action.AdminAction" scope="prototype">
+	 	<property name="service" ref="ServiceImplBean"></property>
+	 	<property name="admin" ref="AdminBean"></property>
+	 	<!-- <property name="honor" ref="HonorBean"></property> -->
+	 </bean>
+	 
+	 <bean id="MaterialBean" class="com.pxxy.djpt.bean.Material"></bean>
+	 <bean id="ProgressActionBean" class="com.pxxy.djpt.action.ProgressAction" scope="prototype">
+	 	<property name="service" ref="ServiceImplBean"></property>
+	 	<property name="material" ref="MaterialBean"></property>
+	 	<property name="stu" ref="StudentBean"></property>
+	 </bean>
+	 
+	 <!-- 2017-11-8 Start Echart -->
+	 <bean id="ChartActionBean" class="com.pxxy.djpt.action.ChartAction" scope="prototype">
+	 	<property name="service" ref="ServiceImplBean"></property>
+	 	<property name="stu" ref="StudentBean"></property>
+	 </bean>
+	 
+	 <bean id="AjaxActionBean" class="com.pxxy.djpt.action.AjaxAction" scope="prototype">
+	 	<property name="service" ref="ServiceImplBean"></property>
+	 	<property name="admin" ref="AdminBean"></property>
+	 	<property name="stu" ref="StudentBean"></property>
+	 	<property name="material" ref="MaterialBean"></property>
+	 </bean>
+	 
+	 <!--======================================== 配置事务======================================== -->
+	 <!-- (1) 创建事务对象 -->
+	 <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	 	<property name="sessionFactory" ref="sessionFactory"></property>
+	 </bean>
+	 <!-- (2) 通过AOP将事务横切到模块中 -->
+	 <aop:config>
+	 	<aop:pointcut id="txService" expression="execution(* com.pxxy.djpt.dao..*.*(..))"/>
+	 	<aop:advisor pointcut-ref="txService" advice-ref="txAdvisor"/>
+	 </aop:config>
+	 
+	 <tx:advice id="txAdvisor" transaction-manager="transactionManager">
+	 	<tx:attributes>
+	 		<tx:method name="save*"/>
+	 		<tx:method name="delete*"/>
+	 		<tx:method name="update*"/>
+	 		<tx:method name="find*" read-only="true"/>
+	 	</tx:attributes>
+	 </tx:advice>
+	 
+</beans>
