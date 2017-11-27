@@ -6,7 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.struts2.ServletActionContext;
 
@@ -85,11 +87,24 @@ public class ProgressAction extends MyActionSupport {
 	}*/
 	
 	//
-	
-	//
 	/**
-	 * student submit materials
+	 * Yizier++++++++++++++++++++begin
 	 */
+	private List<File> img0;              //上传文件  
+    private List<String> img0FileName; //上传的文件名  
+	
+	public List<File> getImg0() {
+		return img0;
+	}
+	public void setImg0(List<File> img0) {
+		this.img0 = img0;
+	}
+	public List<String> getImg0FileName() {
+		return img0FileName;
+	}
+	public void setImg0FileName(List<String> img0FileName) {
+		this.img0FileName = img0FileName;
+	}
 	public String submitMaterial() {
 		if(!isStuLogin()) {
 			return "login";
@@ -99,11 +114,21 @@ public class ProgressAction extends MyActionSupport {
 			return "material";
 		}
 		Material tmp = service.findMaterial(getLoginedStuId(), type);
-		
-		String ext = imgFileName.substring(imgFileName.lastIndexOf("."), imgFileName.length());
-		String filename = new Date().getTime() + ext;
+		//修改文件名
+		List<String> fileName=new ArrayList<String>();
+		List<String> fileExt=new ArrayList<String>();
+		for(int i=0;i<img0.size();i++){
+			String imgName=img0FileName.get(i);
+			String fileext = imgName.substring(imgName.lastIndexOf("."), imgName.length());
+			double ranNum1 = Math.ceil(Math.random() * 25);
+			char zimu1=(char) (97+ranNum1);
+			double ranNum2 = Math.ceil(Math.random() * 25);
+			char zimu2=(char) (97+ranNum2);
+			fileName.add(new Date().getTime()+"_"+zimu1+zimu2+fileext+";");
+			fileExt.add(fileext);
+		}
+		String filename=fileName.toString();
 		material.setImgRef(filename);
-		
 		if(tmp==null) {
 			material.setUserId(getLoginedStuId());
 			material.setImgRef(filename);
@@ -117,15 +142,61 @@ public class ProgressAction extends MyActionSupport {
 			material = tmp;
 			service.saveOrUpdateMaterial(tmp);
 		}
-		
-		System.out.println("Ext " + ext);
-		if(".jsp .exe .xml .bat .vbs .vbe .jar".indexOf(ext)>=0) {
-			setResult("请勿上传后缀为.jsp .exe .xml .bat .vbs .vbe .jar的文件");
-			return "material";
+		for(int i=0;i<fileExt.size();i++){
+			String ext=fileExt.get(i);
+			System.out.println("Ext " + ext);
+			if(".jsp .exe .xml .bat .vbs .vbe .jar".indexOf(ext)>=0) {
+				setResult("请勿上传后缀为.jsp .exe .xml .bat .vbs .vbe .jar的文件");
+				return "material";
+			}
+			File img=img0.get(i);
+			String imgname=img0FileName.get(i);
+			recImg(img, imgname, ext);
 		}
-		recImg(img, filename, ext);
+		
 		return "material";
 	}
+		//Yizier++++++++++++++++++++++++++++++++++++stop
+	
+	/**
+	 * student submit materials
+	 */
+//	public String submitMaterial() {
+//		if(!isStuLogin()) {
+//			return "login";
+//		}
+//		if(imgFileName == null || "".equals(imgFileName.trim())) {
+//			material.setRem("请选择照片");
+//			return "material";
+//		}
+//		Material tmp = service.findMaterial(getLoginedStuId(), type);
+//		
+//		String ext = imgFileName.substring(imgFileName.lastIndexOf("."), imgFileName.length());
+//		String filename = new Date().getTime() + ext;
+//		material.setImgRef(filename);
+//		
+//		if(tmp==null) {
+//			material.setUserId(getLoginedStuId());
+//			material.setImgRef(filename);
+//			material.setType(type);
+//			material.setRem("已提交，审核中");
+//			service.saveOrUpdateMaterial(material);
+//		} else {
+//			tmp.setImgRef(filename);
+//			tmp.setRem("已提交，审核中");
+//			tmp.setContent(material.getContent());
+//			material = tmp;
+//			service.saveOrUpdateMaterial(tmp);
+//		}
+//		
+//		System.out.println("Ext " + ext);
+//		if(".jsp .exe .xml .bat .vbs .vbe .jar".indexOf(ext)>=0) {
+//			setResult("请勿上传后缀为.jsp .exe .xml .bat .vbs .vbe .jar的文件");
+//			return "material";
+//		}
+//		recImg(img, filename, ext);
+//		return "material";
+//	}
 	public String submitApplicationBook() {
 		if(!isStuLogin()) {
 			return "login";

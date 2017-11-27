@@ -6,6 +6,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <title>MyJsp.jsp</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fileUp.css"> 
     <style type="text/css">
     #img-box img {
     	width: 100px;
@@ -56,7 +57,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<img src="<%=basePath%>uploads/${material.imgRef}" ></a>
 				</s:if>
 				<div style="width:250px">
-					<input id='input-file' class="form-control" type="file" name="img">
+					 <!-- 隐藏input_图片隐藏 -->
+      				<div class="all">
+      					<div class="img-cont" id="img_cont1">
+      						<a href="javascript:;" class="file" id="file1">选择文件
+      							<input type="file" onchange='PreviewImage(this)' value="图片" name="img0" id="tp1"/>
+	    					</a>
+	    				</div>
+	   				</div>
+					<!-- <input id='input-file' class="form-control" type="file" name="img"> -->
 				</div>
 			</div>
 			<br>
@@ -83,6 +92,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	  </form>
 	</div>
+	 <!-- js -->
+  	<script  src="js/jquery-1.11.3.min.js"></script>
+  	<script  src="js/fileUp.js"></script>
 	<script type="text/javascript">
 	var m_en = ["material_application","material_dankejieyezhenshu","material_handiaozhenmin"
 	            ,"material_tuanyuanrudantuijianbiao","material_zizhuan","material_report1","material_report2"
