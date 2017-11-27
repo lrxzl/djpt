@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" type="text/css" href="css/fileUp.css"> 
     <style type="text/css">
     #img-box img {
-    	width: 100px;
+    	width: 110px;
     }
     #title {
     	font-size: 20px;
