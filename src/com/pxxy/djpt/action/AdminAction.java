@@ -27,6 +27,7 @@ public class AdminAction extends MyActionSupport {
 	private Student stu;
 	private List<Student> stuList;
 	private List<Admin> adminList;
+	private String haoqia;
 	public Student getStu() {
 		return stu;
 	}
