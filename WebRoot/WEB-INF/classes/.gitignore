@@ -1,8 +1,1 @@
-/META-INF
-/applicationContext.xml
-/cn
-/com
-/hibernate.cfg.xml
-/project_config.txt
-/struts.xml
-/test
+/com/
