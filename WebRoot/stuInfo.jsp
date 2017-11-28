@@ -59,15 +59,9 @@ input::-webkit-input-placeholder {
   <body>
   	<center><div style="font-size: 20px">我的信息</div></center>
 	<div class="main">
-<<<<<<< HEAD
-			<div class="table" align="center">
-				<form action="" method="post" id="form">
-					<table>
-=======
 			<div class="table" style="text-align: left;">
 				<form id="msform" action="StudentAction!updateStuInfo" method="post">
 					<table id="table">
->>>>>>> 60372fd4792ad05f93550867b1ddbc0301262fab
 						<tr>
 							<td>学号:<input type="text" name="stu.stuId" disabled="disabled" value="${stu.stuId}"/></td>
 							<td>姓名:<input type="text" name="stu.name" value="${stu.name}" /></td>
