@@ -115,7 +115,6 @@
 							<a href="javascript:changeUrl('ProgressAction!loadMaterialPage?type=report2');">六月份思想汇报</a>
 							<a href="javascript:changeUrl('ProgressAction!loadMaterialPage?type=report3');">九月份思想汇报</a>
 							<a href="javascript:changeUrl('ProgressAction!loadMaterialPage?type=report4');">十二月份思想汇报</a>
-							<a href="javascript:changeUrl('ProgressAction!loadMaterialPage?type=');">学期奖惩情况和成绩</a>
 						</div>
 					</div>
 					<div class="parent" id="col-04">

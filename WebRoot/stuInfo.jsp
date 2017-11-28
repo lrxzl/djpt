@@ -53,9 +53,11 @@ input::-webkit-input-placeholder {
 #table {height:700px;margin-left: -30px}
 #table input,#table select{width: 190px;margin: 3px;}
 </style>
+
 </head>
   
   <body>
+  	<center><div style="font-size: 20px">我的信息</div></center>
 	<div class="main">
 			<div class="table" style="text-align: left;">
 				<form id="msform" action="StudentAction!updateStuInfo" method="post">

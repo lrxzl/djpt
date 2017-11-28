@@ -44,8 +44,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <%@include file="progressHeader.jsp" %>
   <div class="content" >
-  	  <center><div id="title">材料类型</div></center>
-	  <div id="description">材料描述</div>
+  	  <center><div id="title">标题</div></center>
+	  <div id="description">${request.type }</div>
 	  <div class='rem'>${request.material.rem}</div>
 	  <form id="msform" action="ProgressAction!submitMaterial?type=<%=request.getParameter("type")%>" method="post" enctype="multipart/form-data">
 	  	<div class="row col-sm-6">
