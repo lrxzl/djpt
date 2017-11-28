@@ -5,7 +5,6 @@
 	margin-top: -1px;
 }
 .main{
-	float:right;
 	width: 400px;
 	height: 260px;
 	padding-top: 80px;
@@ -23,8 +22,8 @@
 	padding-top: 20px;
 }
 #title{
-	text-align: center;
-	/* padding-left: 70px; */
+	/*text-align: center;*/
+	padding-left: 70px;
 	font-size: 24px;
 	font-family: "微软雅黑";
 }
@@ -34,17 +33,15 @@
 	border-radius: 5px;
 	/*border: #FFFFFF;*/
 }
-input:hover{
+#sno:hover,#pwd:hover{
 	border: 1px solid orange;
 }
 #check_right{
 	margin-left: 60px;
 }
 #button{
-	/* background-color:red; */
 	width: 260px;
 	height: 40px;
-/* 	border-radius: 5px; */
 	/*line-height: 40px;	*/
 }
 .foot {

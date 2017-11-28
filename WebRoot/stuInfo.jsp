@@ -152,12 +152,7 @@ input::-webkit-input-placeholder {
 						</tr>
 						<tr>
 							<td align="center" colspan="6">
-<<<<<<< HEAD
-								<button type="submit" class="btn btn-danger btn-lg active"
-									id="button">提交</button>
-=======
 								<button type="button" class="btn btn-danger btn-lg active" id="button" onclick="dosubmit()">提交</button>
->>>>>>> 60372fd4792ad05f93550867b1ddbc0301262fab
 							</td>
 						</tr>
 					</table>

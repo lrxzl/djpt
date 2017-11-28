@@ -1,6 +1,4 @@
 
-<<<<<<< HEAD
-=======
 .container{
 	height: 960px;
 /*	border: 1px solid #D6D6D6;
@@ -61,21 +59,16 @@
 .parent .sub a:hover{
 	background-color: #FFFFFF;
 }
->>>>>>> 60372fd4792ad05f93550867b1ddbc0301262fab
 .main{
 	width: 730px;
-	float: left;
+	float: right;
 	margin: auto;
 	margin-top: 20px;
-<<<<<<< HEAD
-	height:1000px;
-=======
 	margin-left:20px;
 	/* height:900px; */
->>>>>>> 60372fd4792ad05f93550867b1ddbc0301262fab
 }
 .main_top{
-	width: 760px;
+	width: 730px;
 	height: 30px;
 }
 .main_link{
@@ -99,26 +92,17 @@
 	background: #9D9D9D;
 	margin-top: 8px;
 }
-#form{
-	width: 800px;
+.table{
+	width: 750px;
 	height: 900px;	
- 	
-	
 }
-#form table{
+.table table{
 	width: 720px;
 	height:900px;
 	font-size: 14px;
-	float:left;
-	padding-left:-200px; 
 }
-<<<<<<< HEAD
-tr{
-	height: 60px;	
-=======
 /* tr{
 	height: 40px;	
->>>>>>> 60372fd4792ad05f93550867b1ddbc0301262fab
 }
 td{
 	width: 40px;
@@ -131,7 +115,5 @@ input:hover{
 }
 #button{
 	width: 260px;
-	height: 40px;
-	font-size:18px;
 }
 
