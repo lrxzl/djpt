@@ -3,8 +3,6 @@
 	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
-
-
 <hibernate-mapping>
 	<class name="com.pxxy.djpt.bean.Honor" table="honor_tb" lazy="false">
 		<id name="honorId">

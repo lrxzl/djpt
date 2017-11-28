@@ -1,10 +1,78 @@
 
+<<<<<<< HEAD
+=======
+.container{
+	height: 960px;
+/*	border: 1px solid #D6D6D6;
+	border-bottom: none;*/
+}
+.container_left{
+	width: 250px;
+	height: 600px;
+	margin-top: 20px;
+}	
+.all{
+	background: url(../img/qyt.jpg)no-repeat;
+	width: 230px;
+	height: 36px;
+}
+.prev{
+	height: 36px;
+	line-height: 28px;
+	font-size: 16px;
+	font-family: "宋体";	
+	margin-left: 20px;
+	color: white;
+	font-weight: bold;
+}
+.event{
+	width: 222px;
+	height: 564px;
+	margin-left: 6px;
+	margin-top: -8px;
+	padding: 2px 0px;
+	/*border: 1px solid #D6D6D6;*/
+	background-color: #FFFFFF;
+}
+.parent a{
+	float: left;
+	width:172px;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	color: #666666;
+	/*text-align:center;*/
+	padding-left: 50px;
+	font-size: 12px;
+	font-family:"微软雅黑";
+	text-decoration: none;
+}
+.parent a:hover{
+	width:222px;
+	background: #EEEEEE;
+	color: black;
+}
+.parent .sub{
+	width: 172px;	
+	padding-left: 30px;
+	font-weight: bold;
+	display: none;	
+}
+.parent .sub a:hover{
+	background-color: #FFFFFF;
+}
+>>>>>>> 60372fd4792ad05f93550867b1ddbc0301262fab
 .main{
 	width: 730px;
 	float: left;
 	margin: auto;
 	margin-top: 20px;
+<<<<<<< HEAD
 	height:1000px;
+=======
+	margin-left:20px;
+	/* height:900px; */
+>>>>>>> 60372fd4792ad05f93550867b1ddbc0301262fab
 }
 .main_top{
 	width: 760px;
@@ -44,12 +112,17 @@
 	float:left;
 	padding-left:-200px; 
 }
+<<<<<<< HEAD
 tr{
 	height: 60px;	
+=======
+/* tr{
+	height: 40px;	
+>>>>>>> 60372fd4792ad05f93550867b1ddbc0301262fab
 }
 td{
 	width: 40px;
-}
+} */
 input{
 	border-radius: 2px;
 }

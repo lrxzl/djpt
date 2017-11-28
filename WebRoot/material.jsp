@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<img src="<%=basePath%>uploads/${material.imgRef}" ></a>
 				</s:if>
 				<div style="width:250px">
-					 <!-- 隐藏input_图片隐藏 -->
+					<!-- 隐藏input_图片隐藏 -->
       				<div class="all">
       					<div class="img-cont" id="img_cont1">
       						<a href="javascript:;" class="file" id="file1">选择文件
