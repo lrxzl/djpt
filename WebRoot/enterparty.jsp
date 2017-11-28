@@ -28,40 +28,8 @@
 	</head>
 
 	<body>
-		<div class="top">
-			<div class="top_link">
-				<div class="login">
-					<!-- <a href="#">登录 </a>|
-					<a href="#">帮助</a> -->
-				</div>
-			</div>
-			<div class="menubar">
-				 <ul>
-	            <li><a href="index.jsp">首页</a></li>
-	            <li>
-	            	<s:if test="#session.stu_session==null">
-	                	<a href="login.jsp">智慧党建</a>
-	                </s:if>
-	                <s:else> 
-	                	<a href="enterparty.jsp">智慧党建</a>
-	                </s:else>
-	            </li>
-	            <li>
-	                <a href="enterparty.jsp">组织机构</a>
-	            </li>
-	            <li>
-	                <a href="enterparty.jsp">党员风采</a>
-	            </li>
-	            <li>
-	                <a href="enterparty.jsp">学习园地</a>
-	            </li>
-	            <li>
-	                <a href="enterparty.jsp">组织建设</a>
-	            </li>
-	        </ul>
-			</div>
-		</div>
-		
+		<!-- 头部 -->
+		<%@ include file="header.jsp" %>
 		<!-- 
 		var m_en = ["material_application","material_dankejieyezhenshu","material_handiaozhenmin"
 	            ,"material_tuanyuanrudantuijianbiao","material_zizhuan","material_report1","material_report2"
@@ -188,7 +156,11 @@
 						</ul>
 					</div>
 					<div class="line">
+<<<<<<< HEAD
+					<iframe id='iframe' src="StudentAction!loadStuInfo" scrolling="no" style="width:730px;height: 930px;border:none;background-color:none"></iframe>
+=======
 					<iframe id='iframe' src="StudentAction!loadStuInfo" scrolling="no" style="width:768px;height:980px;border: none;overflow: hidden;"></iframe>
+>>>>>>> 60372fd4792ad05f93550867b1ddbc0301262fab
 					</div>
 				</div>
 			</div>
