@@ -45,11 +45,11 @@
 									</tr>
 									<tr>
 										<td align="center">
-											<button type="submit" class="btn btn-danger btn-lg active" id="button" value="submit">提交
+											<button type="submit" class="btn btn-danger btn-lg active" id="button" >提交
 											</button>
 										</td>
 									</tr>
-								</tbody>
+								</tbody>	
 							</table>
 						</form>
 					</div>

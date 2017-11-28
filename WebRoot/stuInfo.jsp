@@ -19,8 +19,8 @@
   <body>
 	<div class="main">
 			<div class="table" align="center">
-				<form action="" method="post">
-					<table id="table">
+				<form action="" method="post" id="form">
+					<table>
 						<tr>
 							<td>学号:</td>
 							<td><input type="text" name="" disabled="disabled" /></td>
@@ -139,7 +139,7 @@
 						</tr>
 						<tr>
 							<td align="center" colspan="6">
-								<button type="button" class="btn btn-danger btn-lg active"
+								<button type="submit" class="btn btn-danger btn-lg active"
 									id="button">提交</button>
 							</td>
 						</tr>
