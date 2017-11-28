@@ -128,5 +128,19 @@ public class ServiceImpl implements IService {
 		return dao.findOneByHql("from Honor where stuId=? and term=?"
 				,new Object[]{loginedStuId,term});
 	}
+
+	public void updateStuFields(String stuId, String[] whichFields,Object[] values) {
+		StringBuilder sql = new StringBuilder("update stu_tb set ");
+		Object vals[] = new Object[whichFields.length+1];
+		for(int i=0;i<whichFields.length-1;i++) {
+			sql.append(whichFields[i] + "=? , ");
+			vals[i] = values[i];
+		}
+		sql.append(whichFields[whichFields.length-1] + "=? where stuId=?");
+		vals[vals.length-2] = values[whichFields.length-1];
+		vals[vals.length-1] = stuId;
+		
+		dao.updateBySql(sql.toString(), vals);
+	}
 	
 }

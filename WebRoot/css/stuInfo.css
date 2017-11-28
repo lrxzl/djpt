@@ -28,7 +28,7 @@
 	height: 564px;
 	margin-left: 6px;
 	margin-top: -8px;
-	padding: 10px 0px;
+	padding: 2px 0px;
 	/*border: 1px solid #D6D6D6;*/
 	background-color: #FFFFFF;
 }
@@ -65,7 +65,7 @@
 	margin: auto;
 	margin-top: 20px;
 	margin-left:20px;
-	height:900px;
+	/* height:900px; */
 }
 .main_top{
 	width: 730px;
@@ -101,12 +101,12 @@
 	height:900px;
 	font-size: 14px;
 }
-tr{
+/* tr{
 	height: 40px;	
 }
 td{
 	width: 40px;
-}
+} */
 input{
 	border-radius: 2px;
 }

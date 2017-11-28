@@ -36,6 +36,8 @@ public interface IService {
 	void updateStudent(Student stu);
 	
 	Student loadStuById(String stu_id);
+	void updateStuFields(String stuId, String whichFields[], Object values[]);
+	
 	//==============admin================
 	Admin loadAdminById(String admin_id);
 

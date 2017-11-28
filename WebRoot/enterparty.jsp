@@ -9,25 +9,17 @@
 		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 		<script>
 			$(document).ready(function() { 
-				/* $('.parent').click(function() {
-					$('.parent').each(function() {
-						$('.parent').find(".sub").css("display","none");
-					});
-					$(this).find('.sub').toggle(500);
-				}) */
 				var last = null;
 				$('.alink').click(function() {
 					var _this = $(this);
 					if(last != null && last != $(this)) {
-						last.parent().find('.sub').hide(200,'swing',function() {
-							_this.parent().find('.sub').show(500);
-						});
+						last.parent().find('.sub').hide(300);
+						_this.parent().find('.sub').show(300);
 					} else if(last == $(this)) {
-						$(this).parent().find('.sub').hide(200,'swing',function(){
-							_this.parent().find('.sub').show(500);
-						});
+						$(this).parent().find('.sub').hide(300);
+						_this.parent().find('.sub').show(300);
 					} else {
-						$(this).parent().find('.sub').show(500);
+						$(this).parent().find('.sub').show(300);
 					}
 					last = $(this);
 				});
@@ -90,28 +82,17 @@
 					<span class="prev">智慧党建</span>
 				</div>
 				<div class="event">
-					<div class="parent" id="col-00">
-						<a href="javascript:changeUrl('StudentAction!loadStuInfo');" class="parent alink">个人信息</a>
+					<div class="parent" id="col-01">
+						<a href="#" class="parent alink">个人信息</a>
 						<div class="sub">
-							<a href="stuInfo.jsp">基本信息</a>
-							<a href="#">材料信息</a>
-							<a href="jcqk.jsp">奖惩情况</a>
+							<a href="javascript:changeUrl('StudentAction!loadStuInfo');">基本信息</a>
+							<a href="javascript:changeUrl('StudentAction!loadTermHonor?honor.term=1');">奖惩情况</a>
 						</div>
 					</div>
 					
-					<div class="parent" id="col-01">
+					<!-- <div class="parent" id="col-01">
 						<a href="javascript:changeUrl('StudentAction!loadTermHonor?honor.term=1');" class="parent alink">奖惩情况</a>
-						<!-- <div class="sub">
-							<a href="javascript:changeUrl('StudentAction!loadTermHonor?honor.term=1');">第一学期（大一上）</a>
-							<a href="javascript:changeUrl('StudentAction!loadTermHonor?honor.term=2');">第二学期（大一下）</a>
-							<a href="javascript:changeUrl('StudentAction!loadTermHonor?honor.term=3');">第三学期（大二上）</a>
-							<a href="javascript:changeUrl('StudentAction!loadTermHonor?honor.term=4');">第四学期（大二下）</a>
-							<a href="javascript:changeUrl('StudentAction!loadTermHonor?honor.term=5');">第五学期（大三上）</a>
-							<a href="javascript:changeUrl('StudentAction!loadTermHonor?honor.term=6');">第六学期（大三下）</a>
-							<a href="javascript:changeUrl('StudentAction!loadTermHonor?honor.term=7');">第七学期（大四上）</a>
-							<a href="javascript:changeUrl('StudentAction!loadTermHonor?honor.term=8');">第八学期（大四下）</a>
-						</div> -->
-					</div>
+					</div> -->
 					
 					<div class="parent" id="col-02">
 						<a href="javascript:void(0);" class="parent alink">申请入党阶段</a>
@@ -208,7 +189,7 @@
 						</ul>
 					</div>
 					<div class="line">
-					<iframe id='iframe' src="StudentAction!loadStuInfo" scrolling="no" style="width:768px;height: 580px;border: none;overflow: hidden;"></iframe>
+					<iframe id='iframe' src="StudentAction!loadStuInfo" scrolling="no" style="width:768px;height:980px;border: none;overflow: hidden;"></iframe>
 					</div>
 				</div>
 			</div>
