@@ -39,7 +39,7 @@
 										<td>
 											<input type="checkbox" id="check_left" />下次自动登录
 
-											<a href="/" id="check_right">忘记密码</a>
+											<a href="register.jsp" id="check_right">注册</a>
 
 										</td>
 									</tr>

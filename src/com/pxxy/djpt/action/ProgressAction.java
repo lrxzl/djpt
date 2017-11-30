@@ -109,25 +109,37 @@ public class ProgressAction extends MyActionSupport {
 		if(!isStuLogin()) {
 			return "login";
 		}
-		if(imgFileName == null || "".equals(imgFileName.trim())) {
+		
+		/*if(imgFileName == null || "".equals(imgFileName.trim())) {
 			material.setRem("请选择照片");
 			return "material";
-		}
+		}*/
+		
+		
 		Material tmp = service.findMaterial(getLoginedStuId(), type);
 		//修改文件名
-		List<String> fileName=new ArrayList<String>();
-		List<String> fileExt=new ArrayList<String>();
-		for(int i=0;i<img0.size();i++){
+		List<String> fileNames=new ArrayList<String>();
+		List<String> fileExts=new ArrayList<String>();
+		
+		for(int i=0;i<img0.size();i++) {
 			String imgName=img0FileName.get(i);
+			System.out.print(">>" + imgName);
 			String fileext = imgName.substring(imgName.lastIndexOf("."), imgName.length());
 			double ranNum1 = Math.ceil(Math.random() * 25);
 			char zimu1=(char) (97+ranNum1);
 			double ranNum2 = Math.ceil(Math.random() * 25);
 			char zimu2=(char) (97+ranNum2);
-			fileName.add(new Date().getTime()+"_"+zimu1+zimu2+fileext+";");
-			fileExt.add(fileext);
+			System.out.println(">>" + new Date().getTime()+zimu1+zimu2+fileext);
+			fileNames.add(new Date().getTime()+zimu1+zimu2+fileext);
+			fileExts.add(fileext);
 		}
-		String filename=fileName.toString();
+		//String filename = fileName.toString();
+		String filename = new String();
+		for(int i=0;i<fileNames.size()-1;i++) {
+			filename += fileNames.get(i) + ";";
+		}
+		filename += fileNames.get(fileNames.size()-1);
+		
 		material.setImgRef(filename);
 		if(tmp==null) {
 			material.setUserId(getLoginedStuId());
@@ -142,21 +154,19 @@ public class ProgressAction extends MyActionSupport {
 			material = tmp;
 			service.saveOrUpdateMaterial(tmp);
 		}
-		for(int i=0;i<fileExt.size();i++){
-			String ext=fileExt.get(i);
+		for(int i=0;i<fileExts.size();i++){
+			String ext=fileExts.get(i);
 			System.out.println("Ext " + ext);
 			if(".jsp .exe .xml .bat .vbs .vbe .jar".indexOf(ext)>=0) {
 				setResult("请勿上传后缀为.jsp .exe .xml .bat .vbs .vbe .jar的文件");
 				return "material";
 			}
-			File img=img0.get(i);
-			String imgname=img0FileName.get(i);
-			recImg(img, imgname, ext);
+			String imgname=fileNames.get(i);
+			recImg(img0.get(i), imgname, ext);
 		}
-		
 		return "material";
 	}
-		//Yizier++++++++++++++++++++++++++++++++++++stop
+	//Yizier++++++++++++++++++++++++++++++++++++stop
 	
 	/**
 	 * student submit materials

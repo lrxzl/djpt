@@ -25,8 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </style>
     <script type="text/javascript">
     function sbmt() {
-    	var a = document.getElementById("content").value;
-    	var b = document.getElementById("input-file").value;
+    	/* var a = document.getElementById("content").value;
+    	var b = document.getElementById("input-file").value; */
     	//alert(document.getElementById("input-file").getAttribute("style").indexof(""));
     	/* if(a=='') {
     		alert('请输入内容');
@@ -53,19 +53,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div id="img-box" class='hidding'>
 				材料照片：
 				<s:if test="#request.material!=null">
-					<a href="<%=basePath%>uploads/${material.imgRef}">
-					<img src="<%=basePath%>uploads/${material.imgRef}" ></a>
+					<a href="admin/imageviewer.jsp?imgs=${material.imgRef}"
+					>[查看我提交的照片]</a>
+					<%-- <a href="<%=basePath%>uploads/${material.imgRef}">
+					<img src="<%=basePath%>uploads/${material.imgRef}" ></a> --%>
 				</s:if>
 				<div style="width:250px">
 					<!-- 隐藏input_图片隐藏 -->
       				<div class="all">
       					<div class="img-cont" id="img_cont1">
-      						<a href="javascript:;" class="file" id="file1">选择文件
+      						<a href="javascript:void(0);" class="file" id="file1">选择文件
       							<input type="file" onchange='PreviewImage(this)' value="图片" name="img0" id="tp1"/>
 	    					</a>
 	    				</div>
 	   				</div>
-					<!-- <input id='input-file' class="form-control" type="file" name="img"> -->
+					<!-- <input id='input-file' style="display: none" class="form-control" type="file" name="img"> -->
 				</div>
 			</div>
 			<br>

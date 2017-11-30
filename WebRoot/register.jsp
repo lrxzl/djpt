@@ -18,7 +18,7 @@
 			<div class="main">
 				<div class="frame">
 					<div class="form">
-						<form action="" method="post">
+						<form action="StudentAction!regist" method="post">
 							<table border="0" width="400px" height="260px">
 								<thead>
 									<tr>
@@ -27,17 +27,14 @@
 								</thead>
 								<tbody>
 									<tr>
-
-										<td><input type="text" name="sno" id="sno" placeholder="请输入学号" /></td>
+										<td><input type="text" name="stu.user_id" id="sno" placeholder="请输入学号" /></td>
 									</tr>
 									<tr>
-
-										<td><input type="password" name="pwd" id="pwd" placeholder="请输入密码" /></td>
+										<td><input type="password" name="stu.psw" id="pwd" placeholder="请输入密码" /></td>
 									</tr>
-									
 									<tr>
 										<td align="center">
-											<button type="button" class="btn btn-danger btn-lg active" id="button">提交
+											<button type="button" onclick="submit()" class="btn btn-danger btn-lg active" id="button">提交
 											</button>
 										</td>
 									</tr>
