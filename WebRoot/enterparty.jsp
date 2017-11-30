@@ -188,7 +188,7 @@
 						</ul>
 					</div>
 					<div class="line">
-					<iframe id='iframe' src="StudentAction!loadStuInfo" scrolling="no" style="width:768px;height:980px;border: none;overflow: hidden;"></iframe>
+					<iframe id='iframe' src="StudentAction!loadStuInfo" scrolling="no" style="width:768px;height:860px;border: none;overflow: hidden;"></iframe>
 					</div>
 				</div>
 			</div>

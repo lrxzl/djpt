@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			.mui-preview-image.mui-fullscreen {
 				position: fixed;
 				z-index: 20;
-				background-color: #000;
+				background-color: #f3f3f3;
 			}
 			.mui-preview-header,
 			.mui-preview-footer {
@@ -161,20 +161,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					opacity: 0;
 				}
 			}
-			p { margin: 3px;float: left;}
-			p img {
-				max-width: 300px;
-				height: auto;
+			.imgDiv { 
+				margin: 3px;
+				background-color: #FFF;
+				float: left;
+				width: 225px;
+				height: 225px;
+				background-color: #F3F3F3;
+				text-align: center;
+				overflow: hidden;
+			}
+			.imgDiv img {
+				max-width:225px;
+				min-height:225px;
+				overflow:hidden;
+				background-color: #f3f3f3;
+				margin-left: auto;
+				margin-right: auto;
 			}
 		</style>
 
 	</head>
 
-	<body>
+	<body style="background-color: #FFF">
 		<!-- <header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">image viewer（图片预览）</h1>
 		</header> -->
+		<button onclick="javascript:window.history.back(-1);" class="btn btn-default" style="width: 90%;margin:10px;">
+			<img src="images/goback.png" width="20" height="20"/>
+			<div>返回</div>
+		</button>
 		<div class="mui-content">
 			<div class="mui-content-padded">
 				<div id="img-box"></div>
@@ -183,13 +200,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				var imgs = '<%=request.getParameter("imgs")%>'.split(';');
 				for(var i=0;i<imgs.length;i++) {
 					if(imgs[i] != null && imgs[i] != '') {
-						var p = document.createElement('p');
+						var div = document.createElement('div');
+						div.setAttribute("class","imgDiv");
 						var img = document.createElement('img');
 						img.src = '<%=basePath%>'+"uploads/"+imgs[i];
 						img.setAttribute("data-preview-src","");
 						img.setAttribute("data-preview-group","1");
-						p.appendChild(img);
-						imgbox.appendChild(p);
+						div.appendChild(img);
+						imgbox.appendChild(div);
 					}
 				}
 				</script>

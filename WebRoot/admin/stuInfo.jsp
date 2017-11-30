@@ -215,7 +215,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</s:else>
 					              	  <td>${item.materialId}</td>
 					                  <td><a href="AdminAction!loadStuInfo?stu.stuId=${item.userId}">${item.userName}</a></td>
-					                  <td><a href="<%=basePath%>uploads/${item.imgRef}">[查看]<%-- <img style="height:30px" src="<%=basePath%>uploads/${item.imgRef}" />--%></a></td>
+					                  <td><a href="imageviewer.jsp?imgs=${item.imgRef}">[查看]<%-- <img style="height:30px" src="<%=basePath%>uploads/${item.imgRef}" />--%></a></td>
 					                  <td>${item.banji}</td>
 					                  <td class='item-type'>${item.type}</td>
 					                  <td><a href="javascript:void(0)" onclick="javascript:dialog('${item.content}')" data-toggle="modal" data-target="#myModal">${item.content}</a></td>
@@ -260,6 +260,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   					 <div class="content">
   					 	<s:iterator id="honor" value="#request.honors" status="st">
   					 	<div id="term${honor.term}" class="info-box-hide">
+  					 	<div style="text-align: right;margin-top: -60px"><a id="scanBtn" class="btn btn-info" href="imageviewer.jsp?imgs=${honor.img}">浏览第${honor.term}学期材料图片</a>
+  					 	</div>
   					 	<form id="msform" action="AdminAction!updateStuHonor?stu.stuId=${stu.stuId}&honor.term=${honor.term}" method="post">
 							  <div class="form-group row">
 								  <div class="col-sm-4">
@@ -280,9 +282,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								  	处份情况<textarea class="form-control" name="honor.chufen" >${honor.chufen}</textarea>
 								  </div>
 								  
-								  <div class="col-sm-4">
-								  	<a class="btn btn-default" href="imageviewer.jsp?imgs=${honor.img}">查阅图片</a>
-							  	  </div>
 							  </div>
 							  <!--<div class="col-sm-4">
 							  	<div class="img-box"><img src="images/facebook.png" ></div>
