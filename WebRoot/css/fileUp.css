@@ -1,33 +1,32 @@
 @CHARSET "UTF-8";
   .all{
-  	width:250px;
-    border:2px solid #317ef3;
-  	
+  	width:630px;
   }
   
   .img-cont{
-    width:106px;
+    width:110px;
     height:80px;
-    
    	float:left;
-   	margin:3px;
+   	margin:10px;
   }
 
-  .img-cont>div{ /* 图片 +链接*/
-    width:100px;
+  .img-cont>div{ /* ͼƬ +tޓ*/
+    width:110px;
     height:80px;
     float:left;
     position:absolute;
   }
 
-  .img-cont>div>div{	
-    width:100px;
+  .img-cont>div>div{	/* 图片 */
+    width:110px;
     height:80px;
-     float:left;
+    float:left;
+    margin-top:-6px;
+    margin-left:-5.7px;
   }
 
-  .img-cont>div>a{
-    width:106px;
+  .img-cont>div>a{  /*删除*/
+    width:110px;
     height:25px;
     line-height: 25px;
     text-align: center;
@@ -35,25 +34,26 @@
     color:;
     display: block;
     background: rgba(199,200,200,0.7);
-    margin:0px 0px;
     cursor: pointer;
     position:absolute;
+    margin-top:-3px;
+    margin-left:-2.7px;
   }
  
-  
   .file {
     position: relative;
     display: inline-block;
     background: #D0EEFF;
     border: 1px solid #99D3F5;
     border-radius: 4px;
-    padding: 4px 12px;
+    padding: 4px 12px; 
     overflow: hidden;
     color: #1E88C7;
     text-decoration: none;
     text-indent: 0;
+    text-align:center;
     line-height: 70px;
-    width:80px;
+    width:110px;
     float:left;
 }
 .file input {
@@ -70,16 +70,6 @@
     text-decoration: none;
 }
   
- /*.add_input{
-		width:100px;
-		height:100px;
-		margin-bottom:30px;
-		border:1px solid red;
-		}
-#id{
-	width:200px;
-	height:200px;
-	}*/
 
   .hide{
     display: none !important;

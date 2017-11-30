@@ -1,17 +1,12 @@
 package com.pxxy.djpt.action;
 
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-import java.util.Arrays;
-import java.util.Date;
-
-import sun.misc.BASE64Decoder;
 import cn.lrxzl.web.lib.MyBase64;
 import cn.pxxy.djpt.util.Conf;
 
 import com.pxxy.djpt.bean.Honor;
 import com.pxxy.djpt.bean.IUser;
 import com.pxxy.djpt.bean.Student;
+
 public class StudentAction extends MyActionSupport {
 	private Student stu;
 	public Student getStu() {
@@ -25,21 +20,67 @@ public class StudentAction extends MyActionSupport {
 		if(!isStuLogin()) {
 			return "login";
 		}
-		System.out.println(stu.getRudanjieshaoren());
-		Student s = service.loadStuById(getLoginedStuId());
-		stu.setStuId(s.getStuId());
-		stu.setPsw(s.getPsw());
-		stu.setTijiaorudanshenqintime(s.getTijiaorudanshenqintime());
-		stu.setLieweirudanjijifenzitime(s.getLieweirudanjijifenzitime());
-		stu.setLieweirudanjijifenzitime(s.getLieweirudanjijifenzitime());
-		stu.setZhuangzhentime(s.getZhuangzhentime());
-		stu.setFazhandanzhibushuji(s.getFazhandanzhibushuji());
 		stu.setDanzhibushuji(s.getDanzhibushuji());
 		stu.setSuoshudanzhibu(s.getSuoshudanzhibu());
 		stu.setBiyedanjidiaobo(s.getBiyedanjidiaobo());
-		stu.setBeizhu(s.getBeizhu());
-		stu.setNextop(s.getNextop());
-		service.updateStudent(stu);
+		/*String a[] = stu.getFieldNames();
+		String b[] = stu.getFieldCNs();
+		for(int i=0;i<a.length;i++) {
+			System.out.println(a[i] + " , " + b[i] + " -> " + stu.getVars()[i]);
+		}*/
+		String fields[] = new String[]{
+				"stuId"
+				,"name"
+				,"sex"
+				//,"state"
+				,"minzu"
+				,"banji"
+				,"jiguan"
+				,"chushentime"
+				,"zaiduxueli"
+				//,"peiyangren"
+				//,"lieweirudanjijifenzitime"
+				//,"liewweiyubeidantime"
+				//,"zhuangzhentime"
+				//,"rudanjieshaoren"
+				,"fazhandanzhibushuji"
+				,"danzhibushuji"
+				,"suoshudanzhibu"
+				,"jiatinzhuzhi"
+				,"lianxidianhua"
+				,"biyedanjidiaobo"
+				,"sushe"
+				,"qq"
+				,"wechat"
+				,"danrenzhiwu"
+				//,"liudongdanyuan"
+				//,"lianxiren"
+				,"shenfenzhen"};
+		Object values[] = new Object[]{
+				stu.getStuId()
+				,stu.getName()
+				,stu.getSex()
+				,stu.getMinzu()
+				,stu.getBanji()
+				,stu.getJiguan()
+				,stu.getChushentime()
+				,stu.getZaiduxueli()
+				,stu.getFazhandanzhibushuji()
+				,stu.getDanzhibushuji()
+				,stu.getSuoshudanzhibu()
+				,stu.getJiatinzhuzhi()
+				,stu.getLianxidianhua()
+				,stu.getBiyedanjidiaobo()
+				,stu.getSushe()
+				,stu.getQq()
+				,stu.getWechat()
+				,stu.getDanrenzhiwu()
+				//,stu.getLianxiren()
+				,stu.getShenfenzhen()
+		};
+		System.out.println("身份证：" + stu.getShenfenzhen());
+		System.out.println(fields.length + "," + values.length);
+		service.updateStuFields(getLoginedStuId(), fields, values);
 		return loadStuInfo();
 	}
 	

@@ -38,7 +38,7 @@ function PreviewImage(imgFile) {
        }else{
         //兼容其他浏览器 
         path = URL.createObjectURL(imgFile.files[0]);
-       	document.getElementById(id).innerHTML = "<img src='"+path+"' width='106' height='80' id='"+imgFile.value+"'/>"; 
+       	document.getElementById(id).innerHTML = "<img src='"+path+"' width='110' height='80' id='"+imgFile.value+"'/>"; 
        }
     } 
     if(imgNum.length<=9){

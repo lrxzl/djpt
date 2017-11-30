@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" type="text/css" href="css/fileUp.css"> 
     <style type="text/css">
     #img-box img {
-    	width: 100px;
+    	width: 110px;
     }
     #title {
     	font-size: 20px;
@@ -44,8 +44,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <%@include file="progressHeader.jsp" %>
   <div class="content" >
-  	  <center><div id="title">材料类型</div></center>
-	  <div id="description">材料描述</div>
+  	  <center><div id="title">标题</div></center>
+	  <div id="description">${request.type }</div>
 	  <div class='rem'>${request.material.rem}</div>
 	  <form id="msform" action="ProgressAction!submitMaterial?type=<%=request.getParameter("type")%>" method="post" enctype="multipart/form-data">
 	  	<div class="row col-sm-6">
@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<img src="<%=basePath%>uploads/${material.imgRef}" ></a>
 				</s:if>
 				<div style="width:250px">
-					 <!-- 隐藏input_图片隐藏 -->
+					<!-- 隐藏input_图片隐藏 -->
       				<div class="all">
       					<div class="img-cont" id="img_cont1">
       						<a href="javascript:;" class="file" id="file1">选择文件

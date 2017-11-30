@@ -32,6 +32,15 @@
 		<property name="biyedanjidiaobo"></property>
 		<property name="beizhu"></property>
 		<property name="nextop"></property>
+		
+		<property name="sushe"></property>
+		<property name="qq"></property>
+		<property name="phone"></property>
+		<property name="wechat"></property>
+		<property name="danrenzhiwu"></property>
+		<property name="liudongdanyuan"></property>
+		<property name="lianxiren"></property>
+		<property name="shenfenzhen"></property>
+		
 	</class>
-	
 </hibernate-mapping>

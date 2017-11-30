@@ -35,7 +35,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	  <div></div>
 	  <form id="msform" action="ProgressAction!submitReport?type=${request.type}" method="post" enctype="multipart/form-data">
 	  	<div class="row col-sm-6">
-	  		
 			<s:if test="#request.type=='report1'">第一次思想汇报:</s:if>
 			<s:if test="#request.type=='report2'">第二次思想汇报:</s:if>
 			<s:if test="#request.type=='report3'">第三次思想汇报:</s:if>
@@ -62,7 +61,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<s:if test="#request.stu.nextop==#request.type">
 					<input onclick="sbmt();return false;" class="form-control" type="submit" value="提交">
 				</s:if>
-				
 				<s:else>
 					<input onclick="sbmt();return false;" class="form-control" style="color: gray;" type="submit" disabled="disabled" value="不可提交">
 				</s:else>

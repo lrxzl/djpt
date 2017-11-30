@@ -29,6 +29,63 @@ public class Student implements IUser {
 	private String lianxidianhua;//联系电话
 	private String biyedanjidiaobo;//毕业党籍调拨
 	private String beizhu;//备注
+	
+	private String sushe;//宿舍
+	private String qq;//qq
+	private String phone;//手机
+	private String wechat;//微信
+	private String danrenzhiwu;//担任职务
+	private String liudongdanyuan;//流动党员
+	private String lianxiren;//联系人
+	private String shenfenzhen;//身份证
+	public String getShenfenzhen() {
+		return shenfenzhen;
+	}
+	public void setShenfenzhen(String shenfenzhen) {
+		this.shenfenzhen = shenfenzhen;
+	}
+	public String getSushe() {
+		return sushe;
+	}
+	public void setSushe(String sushe) {
+		this.sushe = sushe;
+	}
+	public String getQq() {
+		return qq;
+	}
+	public void setQq(String qq) {
+		this.qq = qq;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getWechat() {
+		return wechat;
+	}
+	public void setWechat(String wechat) {
+		this.wechat = wechat;
+	}
+	public String getDanrenzhiwu() {
+		return danrenzhiwu;
+	}
+	public void setDanrenzhiwu(String danrenzhiwu) {
+		this.danrenzhiwu = danrenzhiwu;
+	}
+	public String getLiudongdanyuan() {
+		return liudongdanyuan;
+	}
+	public void setLiudongdanyuan(String liudongdanyuan) {
+		this.liudongdanyuan = liudongdanyuan;
+	}
+	public String getLianxiren() {
+		return lianxiren;
+	}
+	public void setLianxiren(String lianxiren) {
+		this.lianxiren = lianxiren;
+	}
 	public static String[] getFieldCNs() {
 		return new String[]{
 				"学号"
@@ -51,6 +108,7 @@ public class Student implements IUser {
 				,"家庭住址"
 				,"联系电话"
 				,"毕业党籍调拨"
+				,"宿舍","qq","手机","微信","担任职务","流动党员","联系人","身份证"
 		};
 	}
 	public static String[] getFieldNames() {
@@ -75,6 +133,7 @@ public class Student implements IUser {
 				,"jiatinzhuzhi"
 				,"lianxidianhua"
 				,"biyedanjidiaobo"
+				,"sushe","qq","phone","wechat","danrenzhiwu","liudongdanyuan","lianxiren","shenfenzhen"
 				};
 	}
 	public Object[] getVars() {
@@ -99,11 +158,9 @@ public class Student implements IUser {
 				,jiatinzhuzhi
 				,lianxidianhua
 				,biyedanjidiaobo
-				};
+				,sushe,qq,phone,wechat,danrenzhiwu,liudongdanyuan,lianxiren,shenfenzhen
+			};
 	}
-	
-	
-	
 	
 	private String nextop;
 	public String getNextop() {

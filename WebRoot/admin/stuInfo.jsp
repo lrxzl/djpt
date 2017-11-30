@@ -67,16 +67,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <%@include file="header.jsp" %>
   
-  <div class="page-content">
-    	<div class="row">
+  <div class="page-content"><div class="row"></div> 
 		  <div class="col-md-2">
 			<div class="sidebar content-box" style="display: block;">
 			     <ul class="nav">
 			         <!-- Main menu -->
 			         <li class="current"><a href="AdminAction!loadAdminPage"><i class="glyphicon glyphicon-home"></i>管理首页</a></li>
 			         <!-- <li><a href="calendar.html"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li> -->
-			         <!-- <li ><a href="AdminAction!loadStuList"><i class="glyphicon glyphicon-list"></i> 学生党员列表 </a></li>
-			          -->
+			         <!-- <li ><a href="AdminAction!loadStuList"><i class="glyphicon glyphicon-list"></i> 学生党员列表 </a></li>-->
 			          <li class="submenu">
 			         	<a href="#">
 			                 <i class="glyphicon glyphicon-list"></i>入党列表 
@@ -233,9 +231,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</table>
   				</div>
   			</div>
-		   </div>
 		<!-- honor -->
-		  <div class="col-md-10 col-md-offset-2">
+		  <div class="col-md-10">
   			<div class="content-box-large">
   				<div class="panel-heading">
 					<div class="panel-title">${stu.name}的奖惩情况
