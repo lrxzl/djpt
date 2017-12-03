@@ -287,7 +287,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="bottom_top"></div>
 				<div class="bottom_bot">
 					<div class="bottom_p">
-						<p><a href="admin/AdminAction!loadAdminPage">中共萍乡学院信息与计算机工程学院委员会 © 2017 版权所有</a></p>
+						<p><a href="admin/AdminAction!loadAdminPage">中共萍乡学院信息与计算机工程学院总支委员会 © 2017 版权所有</a></p>
 						<p>电子邮箱：396101935@qq.com 备案证编号：赣ICP备xxxxxx</p>
 					</div>
 				</div>

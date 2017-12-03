@@ -1,2 +1,12 @@
+/META-INF/
+/applicationContext.xml
+/cn/
 /com/
+<<<<<<< HEAD
+/hibernate.cfg.xml
+/project_config.txt
+/struts.xml
+/test/
+=======
 /cn
+>>>>>>> c117dd31a4459d35800e49e20469abf5201d2b00
