@@ -20,9 +20,6 @@ public class StudentAction extends MyActionSupport {
 		if(!isStuLogin()) {
 			return "login";
 		}
-		stu.setDanzhibushuji(s.getDanzhibushuji());
-		stu.setSuoshudanzhibu(s.getSuoshudanzhibu());
-		stu.setBiyedanjidiaobo(s.getBiyedanjidiaobo());
 		/*String a[] = stu.getFieldNames();
 		String b[] = stu.getFieldCNs();
 		for(int i=0;i<a.length;i++) {
