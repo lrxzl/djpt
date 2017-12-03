@@ -55,6 +55,9 @@
 			<result name="materialList">/admin/materialList.jsp</result>
 			<result name="materialPassed">/admin/materialPassed.jsp</result>
 			<result name="materialReject">/admin/materialReject.jsp</result>
+			
+			<result name="teacherAdminPage">/admin/teacherAdminPage.jsp</result>
+			
 			<interceptor-ref name="userInterceptor"></interceptor-ref>
 		</action>
 		

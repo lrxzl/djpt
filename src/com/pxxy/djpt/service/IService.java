@@ -46,7 +46,9 @@ public interface IService {
 	Material findMaterial(String loginedStuId, String materialApplication);
 
 	void saveOrUpdateMaterial(Material material);
-
+	
+	void updateAdmin(Admin admin);
+	
 	//===============Material================
 	List<Material> loadMaterialByStu(String stuId);
 

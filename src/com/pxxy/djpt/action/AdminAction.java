@@ -160,7 +160,7 @@ public class AdminAction extends MyActionSupport {
 	
 	
 	public String login() {
-		IUser u = service.loadAdminById(admin.getUser_id());
+		/*IUser u = service.loadAdminById(admin.getUser_id());
 		if(u==null) {
 			setResult("账号未找到");
 			return INPUT;
@@ -169,6 +169,24 @@ public class AdminAction extends MyActionSupport {
 			return INPUT;
 		}
 		setAdminLogin(u);
+		return loadAdminPage();*/
+		Admin a = service.loadAdminById(admin.getUser_id());
+		if(a==null) {
+			setResult("账号未找到");
+			return INPUT;
+		} else if(!a.getPsw().equals(admin.getPsw())) {
+			setResult("密码错误");
+			return INPUT;
+		}
+		setAdminLogin(a);
+		if(Conf.admin_type_teacher.equals(a.getType())) {
+			return loadTeacherAdminPage(a.getAdmin_id());
+		}
+		
+		if(Conf.admin_type_newsEditor.equals(a.getType())) {
+			
+		}
+		
 		return loadAdminPage();
 	}
 	
@@ -431,6 +449,23 @@ public class AdminAction extends MyActionSupport {
 		materials = getIDao().findByHql("from Material where passed=-1 order by materialId desc");
 		dealWithMaterials(materials);
 		return "materialReject";
+	}
+	
+	/**
+	 * 身份所对应的首页
+	 */
+	private String loadTeacherAdminPage(String admin_id) {
+		admin = service.loadAdminById(admin_id);
+		loadAdminList();
+		return "teacherAdminPage";
+	}
+	
+	public String updateTeacherAdminInfo() {
+		Admin tmp = service.loadAdminById(getLoginedAdminId());
+		admin.setPermission(tmp.getPermission());
+		admin.setPsw(tmp.getPsw());
+		service.updateAdmin(admin);
+		return loadTeacherAdminPage(admin.getAdmin_id());
 	}
 	
 }

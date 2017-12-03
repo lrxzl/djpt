@@ -260,7 +260,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   					 <div class="content">
   					 	<s:iterator id="honor" value="#request.honors" status="st">
   					 	<div id="term${honor.term}" class="info-box-hide">
-  					 	<div style="text-align: right;margin-top: -60px"><a id="scanBtn" class="btn btn-info" href="imageviewer.jsp?imgs=${honor.img}">浏览第${honor.term}学期材料图片</a>
+  					 	<div style="text-align: right;margin-top: -60px"><a id="scanBtn" class="btn btn-info" href="imageviewer.jsp?imgs=${honor.img}">第${honor.term}学期材料图片</a>
   					 	</div>
   					 	<form id="msform" action="AdminAction!updateStuHonor?stu.stuId=${stu.stuId}&honor.term=${honor.term}" method="post">
 							  <div class="form-group row">

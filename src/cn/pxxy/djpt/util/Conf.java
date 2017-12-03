@@ -34,9 +34,9 @@ public class Conf {
 		,"教师1权限（可以修改学生信息，不可编辑新闻）"
 	};
 	
-	public static final int admin_type_admin = 1;
-	public static final int admin_type_teacher = 2; 
-	public static final int admin_type_newsEditor = 3;
+	public static final String admin_type_admin = "管理员";
+	public static final String admin_type_teacher = "教工党员"; 
+	public static final String admin_type_newsEditor = "新闻管理";
 	
 /*
    1、申请入党阶段（提交入党申请书；党组织是否派人谈话CheckBox）

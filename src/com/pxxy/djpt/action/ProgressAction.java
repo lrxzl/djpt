@@ -90,7 +90,7 @@ public class ProgressAction extends MyActionSupport {
 	/**
 	 * Yizier++++++++++++++++++++begin
 	 */
-	private List<File> img0;              //上传文件  
+	private List<File> img0;           //上传文件  
     private List<String> img0FileName; //上传的文件名  
 	
 	public List<File> getImg0() {
@@ -154,7 +154,7 @@ public class ProgressAction extends MyActionSupport {
 			material = tmp;
 			service.saveOrUpdateMaterial(tmp);
 		}
-		for(int i=0;i<fileExts.size();i++){
+		for(int i=0;i<fileExts.size();i++) {
 			String ext=fileExts.get(i);
 			System.out.println("Ext " + ext);
 			if(".jsp .exe .xml .bat .vbs .vbe .jar".indexOf(ext)>=0) {

@@ -121,8 +121,8 @@
 						<a href="javascript:void(0);" class="parent alink">发展对象阶段</a>
 						<div class="sub">
 							<a href="javascript:changeUrl('ProgressAction!loadMaterialPage?type=');">业绩汇报</a>
-							<a href="javascript:changeUrl('ProgressAction!loadMaterialPage?type=danyuanpinyi1');">三月党员评议</a>
-							<a href="javascript:changeUrl('ProgressAction!loadMaterialPage?type=danyuanpinyi2');">五月非党员评议</a>
+							<a href="javascript:changeUrl('ProgressAction!loadMaterialPage?type=danyuanpinyi1');">三份党员评议</a>
+							<a href="javascript:changeUrl('ProgressAction!loadMaterialPage?type=danyuanpinyi2');">五份非党员评议</a>
 							<a href="javascript:changeUrl('ProgressAction!loadMaterialPage?type=');">填写入党志愿书</a>
 						</div>
 					</div>

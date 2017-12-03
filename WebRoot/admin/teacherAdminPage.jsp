@@ -145,6 +145,60 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		  			</div>
 		  			
   				</div>
+  				
+  				
+  				<div class="col-md-5">
+  					<div class="content-box-large">
+		  				<div class="panel-heading">
+							<div class="panel-title"></div>
+							<div class="panel-options">
+								<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+								<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+							</div>
+						</div>
+		  				<div class="panel-body">
+		  					<span id="result"></span>
+		  					<div class="content">
+		  					<form id="msform" action="AdminAction!updateStuInfo?stu.stuId=${stu.stuId}" method="post">
+							  <div class="form-group row">
+								  <div class="col-sm-4">
+								  	姓名<input class="form-control" name="stu.name" value="${stu.name}" />
+								  	性别<input class="form-control" name="stu.sex" value="${stu.sex}" />
+								  	民族<input class="form-control" name="stu.minzu" value="${stu.minzu}" />
+								  	籍贯<input class="form-control" name="stu.jiguan" value="${stu.jiguan}" />
+								  	出生日期<input class="form-control" name="stu.chushentime" value="${stu.chushentime}" />
+			  					  </div>
+								  
+								  <div class="col-sm-4">
+								  	岗位类别<input class="form-control" name="stu.zaiduxueli" value="${stu.zaiduxueli}" />
+			  					  	职称<input class="form-control" name="stu.zaiduxueli" value="${stu.zaiduxueli}" />
+			  					  	第一学历<input class="form-control" name="stu.zaiduxueli" value="${stu.zaiduxueli}" />
+			  					  	最高学历<input class="form-control" name="stu.zaiduxueli" value="${stu.zaiduxueli}" />
+			  					  	学位<input class="form-control" name="stu.zaiduxueli" value="${stu.zaiduxueli}" />
+								  </div>
+								  
+								  <div class="col-sm-4">
+								  	入党时间<input class="form-control" name="stu.zaiduxueli" value="${stu.zaiduxueli}" />
+			  					  	联系电话<input class="form-control" name="stu.zaiduxueli" value="${stu.zaiduxueli}" />
+			  					  	所属党支部<input class="form-control" name="stu.zaiduxueli" value="${stu.zaiduxueli}" />
+			  					  	所在部门<input class="form-control" name="stu.zaiduxueli" value="${stu.zaiduxueli}" />
+			  					  	年度评优考核情况<input class="form-control" name="stu.zaiduxueli" value="${stu.zaiduxueli}" />
+			  					  	备注<input class="form-control" name="stu.zaiduxueli" value="${stu.zaiduxueli}" />
+								  </div>
+								  
+							  </div>
+							  
+							  <div class="row">
+								  <div class="form-group col-sm-4 col-sm-offset-4">
+								  	<input class="form-control" type="submit" value="提交更改"/>
+								  </div>
+							  </div>
+							  </form>
+		  					</div>
+		  				</div>
+		  			</div>
+		  			
+  				</div>
   			</div>
 		    
 		   </div>
